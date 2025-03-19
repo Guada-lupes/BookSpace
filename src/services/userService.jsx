@@ -88,3 +88,15 @@ export const checkUserCredentials = (username, password) => {
     (user) => user.username === username && user.password === password
   );
 };
+
+/* 
+  Función para actualizar la información de un usuario.
+  Se actualiza el usuario con 'id' recibido utilizando los campos presentes en el objeto 'updateData'.
+  Retorna el usuario actualizado.
+*/
+export const updateUser = (id, updateData) => {
+  users = users.map((user) =>
+    user.id === id ? { ...user, ...updateData } : user
+  );
+  return users.find((user) => user.id === id);
+};
