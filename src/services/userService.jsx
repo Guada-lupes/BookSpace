@@ -75,7 +75,16 @@ export const getUsers = () => {
   Función para buscar un usuario por su nombre de usuario.
   Útil para verificar si el usuario existe antes de realizar un proceso de autenticación.
 */
-
 export const findUserByUsername = (username) => {
   return users.find((user) => user.username === username);
+};
+
+/* 
+  Función para validar las credenciales del usuario (username y password).
+  Retorna el usuario si la verificación es correcta, de lo contrario undefined.
+*/
+export const checkUserCredentials = (username, password) => {
+  return users.find(
+    (user) => user.username === username && user.password === password
+  );
 };
