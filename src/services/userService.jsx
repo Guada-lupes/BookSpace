@@ -100,3 +100,10 @@ export const updateUser = (id, updateData) => {
   );
   return users.find((user) => user.id === id);
 };
+
+// Ejemplo: actualizar la foto de perfil, username y email de un usuario específico
+// const updatedUser = updateUser(3, {
+//   profilePicture: "https://nuevaurl.com/nuevaimagen.jpg",
+//   username: "newPoetita",
+//   email: "new.email@example.com"
+// });
