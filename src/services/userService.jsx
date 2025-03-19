@@ -1,6 +1,6 @@
 // Data de usuarios Mockeados
 
-const users = [
+let users = [
   {
     id: 1,
     username: "bibliovida",
@@ -63,6 +63,19 @@ const users = [
   },
 ];
 
-export default users;
+/* 
+  Función para obtener todos los usuarios.
+  Se retorna una copia del array para evitar mutaciones externas.
+*/
+export const getUsers = () => {
+  return [...users];
+};
 
-// Pendiente función para traernos a todos los users
+/* 
+  Función para buscar un usuario por su nombre de usuario.
+  Útil para verificar si el usuario existe antes de realizar un proceso de autenticación.
+*/
+
+export const findUserByUsername = (username) => {
+  return users.find((user) => user.username === username);
+};
