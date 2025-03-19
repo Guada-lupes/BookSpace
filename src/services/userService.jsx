@@ -64,3 +64,5 @@ const users = [
 ];
 
 export default users;
+
+// Pendiente función para traernos a todos los users
