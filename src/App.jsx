@@ -1,6 +1,9 @@
 import './App.css'
 import { Routes, Route } from "react-router-dom";
+//Importación de contextos
 import { BooksProvider } from './contexts/BooksContext';
+import { FavoritesProvider } from './contexts/FavoritesContext';
+//Importación de componentes
 import { HomePage } from './pages/HomePage';
 import { DetailsProductComponent } from './components/DetailsProductComponent';
 
@@ -8,6 +11,7 @@ function App() {
 
   return (
     <>
+    <FavoritesProvider>
     <BooksProvider>
     <Routes>
 
@@ -30,7 +34,7 @@ function App() {
 
 </Routes>
     </BooksProvider>
-    
+    </FavoritesProvider>
     </>
   )
 }
