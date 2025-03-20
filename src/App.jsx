@@ -1,13 +1,14 @@
 import './App.css'
 import { Routes, Route } from "react-router-dom";
 import { BooksProvider } from './contexts/BooksContext';
+import { ProductsComponent } from './components/ProductsComponent';
 
 function App() {
 
   return (
     <>
     <BooksProvider>
-
+<ProductsComponent/>
     <Routes>
 
 {/* Falta importar el componente e insertar el componente LoginPage dentro de las {}
