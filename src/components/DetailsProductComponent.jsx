@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { BooksContext } from "../contexts/BooksContext";
 import { useParams } from "react-router-dom";
 
-export function DetailsProductComponent(id) {
+export function DetailsProductComponent() {
   //importamos useParams y extraemos el id de la url
   const id = useParams();
   //traemos la data de libros del contexto
