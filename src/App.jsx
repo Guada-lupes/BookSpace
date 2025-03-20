@@ -1,14 +1,14 @@
 import './App.css'
 import { Routes, Route } from "react-router-dom";
 import { BooksProvider } from './contexts/BooksContext';
-import { ProductsComponent } from './components/ProductsComponent';
+import { HomePage } from './pages/HomePage';
+import { DetailsProductComponent } from './components/DetailsProductComponent';
 
 function App() {
 
   return (
     <>
     <BooksProvider>
-<ProductsComponent/>
     <Routes>
 
 {/* Falta importar el componente e insertar el componente LoginPage dentro de las {}
@@ -17,8 +17,10 @@ function App() {
 {/* Falta importar el componente e insertar el componente RegisterPage dentro de las {
 <Route path='/register' element={}/> */}
 
-{/* Falta importar el componente e insertar el componente HomePage dentro de las {}
-<Route path='/home' element={}/> */}
+
+<Route path='/' element={<HomePage/>}>
+<Route path='/:id' element={<DetailsProductComponent/>}/>
+</Route>
 
 {/* Falta importar el componente e insertar el componente DashboardPage dentro de las {}
 <Route path='/dashboard' element={}/> */}
