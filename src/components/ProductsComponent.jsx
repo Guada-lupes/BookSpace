@@ -19,7 +19,7 @@ export const ProductsComponent = () => {
           </div>
 
           <div className="book-name-container">
-            <p className="book-title">{book.titulo}</p>{" "}
+            <p className="book-title">{book.titulo}</p>
             <p className="book-autor">{book.autor}</p>
           </div>
 
@@ -30,9 +30,9 @@ export const ProductsComponent = () => {
             <p className="book-rating">{book.rating}</p>
           </div>
 
-          {/* <Link to={`/${book.id}`}>
+          <Link to={`/${book.id}`}>
             <button className="book-masinfo-buttton">Más info</button>
-          </Link> */}
+          </Link>
           <div className="book-favoritos-container">
             {/* corazon vacio
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
