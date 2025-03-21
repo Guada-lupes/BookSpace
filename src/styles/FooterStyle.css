@@ -1,0 +1,78 @@
+/*-------------Estilos del FOOTER---------------------*/
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* FOOTER: Estilo nav de socialmedia:*/
+  .footer__socialmedia-nav {
+    display: flex;
+    flex-direction: column; /* En la versión móvil, los enlaces se ordenan en vertical*/
+    gap: 10px; 
+    margin-bottom: 20px;
+  }
+  
+  /* FOOTER: Estilo links a socialmedia */
+  .footer__socialmedia-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .footer__socialmedia-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* FOOTER: Estilo información legal*/
+  .footer__legal-info {
+    display: flex;
+    flex-direction: column; /* En móvil, los enlaces legales se apilan verticalmente */
+    gap: 10px; 
+  }
+  /* FOOTER: Element: copyright */
+  .footer__copyright {
+    margin: 0;
+    font-size: 12px;
+  }
+  
+  /* FOOTER: Element: legal-link */
+  .footer__legal-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+  }
+  
+  .footer__legal-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* FOOTER: Media Queries: 
+  Pantalla tablet y escritorio: 
+  Cambio la dirección de los elementos de enlace a redes sociales (ahora en línea horizontal(row)
+  También cambiamos el tamaño de letra(más grande para tablets y escritorio)*/
+  @media (min-width: 768px) {
+    .footer__social-nav {
+      flex-direction: row; 
+      justify-content: center;
+    }
+  
+    .footer__legal-info {
+      flex-direction: row; 
+      justify-content: center;
+      gap: 20px; 
+    }
+  
+    .footer__social-link {
+      font-size: 16px; 
+    }
+  
+    .footer__copyright,
+    .footer__legal-link {
+      font-size: 14px; 
+    }
+  }
+  
+  

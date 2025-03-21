@@ -1,3 +1,9 @@
+import './App.css';
+{/*import { Routes, Route } from "react-router-dom"*/}
+
+
+import  HeaderComponent from "./components/HeaderComponent.jsx";
+import FooterComponent from "./components/FooterComponent.jsx"
 import './App.css'
 import { Routes, Route } from "react-router-dom";
 //Importación de contextos
@@ -10,6 +16,13 @@ import { DetailsProductComponent } from './components/DetailsProductComponent';
 function App() {
 
   return (
+    <div>
+      <HeaderComponent/>
+      
+      <FooterComponent/>
+    </div>
+  )
+   {/*<Routes>*/}
     <>
     <FavoritesProvider>
     <BooksProvider>
@@ -32,6 +45,9 @@ function App() {
 {/* Falta importar el componente e insertar el componente FavoritesPage dentro de las {}
 <Route path='/favorites' element={}/> */}
 
+    {/*</Routes>*/}
+  
+  
 </Routes>
     </BooksProvider>
     </FavoritesProvider>
@@ -39,4 +55,5 @@ function App() {
   )
 }
 
-export default App
+export default App;
+

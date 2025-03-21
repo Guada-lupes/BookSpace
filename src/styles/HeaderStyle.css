@@ -1,0 +1,50 @@
+/*Estilos del HEADER:*/
+
+.header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        color: white;
+        position: relative;
+}
+
+
+  .header__logo-img {
+    height: auto; 
+    }
+          
+  .header__title {
+            flex-grow: 1;
+            text-align: center;
+            }
+          
+  .header__menu-icon {
+            cursor: pointer;
+            }
+          
+  .header__menu-overlay {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: #d21b53;
+            padding: 10px;
+            border-radius: 0px 0px 0px 5px;
+          }
+          
+  .header__menu-list {
+            list-style: none;
+            padding: 0;
+          }
+          
+  .header__menu-list li a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 8px 16px;
+            }
+          
+  .header__menu-list li a:hover {
+            background-color: #b21845;
+            }
+           
