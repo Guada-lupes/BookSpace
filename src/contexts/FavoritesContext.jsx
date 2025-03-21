@@ -1,7 +1,5 @@
 import { createContext, useState } from "react";
 import React from "react";
-import { useContext } from "react";
-import { BooksContext } from "./BooksContext";
 
 //creamos contexto
 export const FavoritesContext = createContext();
@@ -10,13 +8,21 @@ export const FavoritesContext = createContext();
 export const FavoritesProvider = ({ children }) => {
   //creamos use para guardar favoritos
   const [favorites, setFavorites] = useState([]);
-  //traemos contexto de libros para buscar libro por id
-  const { books } = useContext(BooksContext);
+
 
   //funcion para añadir a favoritos
-  function addFavorites(id) {
-    const favoriteBook = books.filter((book) => book.id === id);
-    setFavorites([...favorites, { favoriteBook }]);
+  function addFavorites(book) {
+
+    console.log("hola");
+    console.log(book);
+    
+    setFavorites((prevFavorites)=>{
+      const favoriteBook = prevFavorites.find((favorite)=> favorite.id === book.id);
+
+      return favoriteBook ? prevFavorites : [...prevFavorites, book]
+    })
+    console.log(favorites);
+    
   }
 
   //funcion para borrar favoritos

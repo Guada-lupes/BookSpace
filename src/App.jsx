@@ -1,27 +1,15 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 
-//Importación de contextos
-import { BooksProvider } from "./contexts/BooksContext";
-import { FavoritesProvider } from "./contexts/FavoritesContext";
-
-//Importación de páginas
-import { HomePage } from "./pages/HomePage";
-
 //Importación de componentes
-import { DetailsProductComponent } from "./components/DetailsProductComponent";
-import HeaderComponent from "./components/HeaderComponent.jsx";
-import FooterComponent from "./components/FooterComponent.jsx";
+import { HomePage } from './pages/HomePage';
+import { FavoritesPage } from './pages/FavoritesPage';
+import { DetailsProductComponent } from './components/DetailsProductComponent';
 
 function App() {
   return (
     <>
-      {/* Proveedor de contexto de Favoritos */}
-      <FavoritesProvider>
-        {/* Proveedor de contexto de los libros */}
-        <BooksProvider>
-          <Routes>
-            <HeaderComponent />
+    <Routes>
 
             {/* Falta importar el componente e insertar el componente LoginPage dentro de las {}
 <Route path='/login' element={}/>  */}
@@ -36,15 +24,9 @@ function App() {
             {/* Falta importar el componente e insertar el componente DashboardPage dentro de las {}
 <Route path='/dashboard' element={}/> */}
 
-            {/* Falta importar el componente e insertar el componente FavoritesPage dentro de las {}
-<Route path='/favorites' element={}/> */}
+<Route path='/favorites' element={<FavoritesPage/>}/>
 
-            {/*</Routes>*/}
-
-            <FooterComponent />
-          </Routes>
-        </BooksProvider>
-      </FavoritesProvider>
+</Routes>
     </>
   );
 }
