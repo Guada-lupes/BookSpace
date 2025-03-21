@@ -5,6 +5,10 @@ import { Link } from "react-router-dom";
 export const FavoritesCartComponent = () => {
   const { deleteFavorites, favorites } = useContext(FavoritesContext);
 
+  console.log(favorites);
+  console.log(favorites.map((favorite)=>favorite.titulo));
+  
+  
   return (
     <div className="favorites-container">
           <h1 className="favorites-container-title">Mis favoritos</h1>
