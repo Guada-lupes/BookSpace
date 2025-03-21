@@ -1,12 +1,20 @@
-import './App.css'
-import { Routes, Route } from "react-router-dom"
+import './App.css';
+{/*import { Routes, Route } from "react-router-dom"*/}
 
+
+import  HeaderComponent from "./components/HeaderComponent.jsx";
+import FooterComponent from "./components/FooterComponent.jsx"
 
 function App() {
 
   return (
-    <>
-    <Routes>
+    <div>
+      <HeaderComponent/>
+      
+      <FooterComponent/>
+    </div>
+  )
+   {/*<Routes>*/}
 
       {/* Falta importar el componente e insertar el componente LoginPage dentro de las {}
       <Route path='/login' element={}/>  */}
@@ -23,10 +31,10 @@ function App() {
       {/* Falta importar el componente e insertar el componente FavoritesPage dentro de las {}
       <Route path='/favorites' element={}/> */}
 
-    </Routes>
-      
-    </>
-  )
+    {/*</Routes>*/}
+  
+  
 }
 
-export default App
+export default App;
+
