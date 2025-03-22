@@ -23,8 +23,7 @@ function App() {
         <Route path="/" element={<HomePage />}>
           <Route path="/:id" element={<DetailsProductComponent />} />
         </Route>
-        <Route path="/dashboard" element={DashboardPage}>
-          {" "}
+        <Route path="/dashboard" element={<DashboardPage/>}>
         </Route>
         <Route path="/favorites" element={<FavoritesPage />} />
       </Routes>

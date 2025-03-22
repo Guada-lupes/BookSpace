@@ -5,9 +5,7 @@ import { Link } from "react-router-dom";
 export const FavoritesCartComponent = () => {
   const { deleteFavorites, favorites } = useContext(FavoritesContext);
 
-  console.log(favorites);
   console.log(favorites.map((favorite)=>favorite.titulo));
-  
   
   return (
     <div className="favorites-container">
@@ -22,6 +20,8 @@ export const FavoritesCartComponent = () => {
             <div className="favorite-item-img-container">
             <img className="favorite-img" src={favorite.imagen} alt={`miniatura de la imagen relacionada con el titulo ${favorite.titulo}`} />
             </div>
+
+            {/* Cambiar esto por un icono de corazon acompañado de eliminar de favoritos*/}
             <button onClick={() => deleteFavorites(favorite.id)}>Eliminar</button>
             <Link to={`/${favorite.id}`}>
             <button>Detalles</button>

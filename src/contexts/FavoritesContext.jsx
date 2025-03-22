@@ -13,9 +13,6 @@ export const FavoritesProvider = ({ children }) => {
   //funcion para añadir a favoritos
   function addFavorites(book) {
 
-    console.log("hola");
-    console.log(book);
-    
     setFavorites((prevFavorites)=>{
       const favoriteBook = prevFavorites.find((favorite)=> favorite.id === book.id);
 

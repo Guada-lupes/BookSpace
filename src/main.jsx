@@ -7,13 +7,13 @@ import { BooksProvider } from "./contexts/BooksContext.jsx";
 import { FavoritesProvider } from "./contexts/FavoritesContext.jsx";
 
 createRoot(document.getElementById("root")).render(
+  <AuthProvider>
   <BrowserRouter>
     <FavoritesProvider>
       <BooksProvider>
-        <AuthProvider>
           <App />
-        </AuthProvider>
       </BooksProvider>
     </FavoritesProvider>
   </BrowserRouter>
+  </AuthProvider>
 );
