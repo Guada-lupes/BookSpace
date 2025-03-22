@@ -24,11 +24,19 @@ export const AuthProvider = ({ children }) => {
     setCurrentUser(null);
   };
 
+  // Función para actualizar el perfil del usuario
+  const updateUserProfile = (updateData) => {
+    const updatedUser = updateUser(currentUser.id, updateData);
+    // Actualizamos el estado con la nueva data del usuario
+    setCurrentUser(updatedUser);
+  };
+
   // Valor que se proveerá a todos los componentes consumidores del contexto
   const authContextValue = {
     currentUser,
     login,
     logout,
+    updateUserProfile,
   };
 
   return (

@@ -2,6 +2,7 @@
 
 import React, { useContext } from "react";
 import { AuthContext } from "../contexts/AuthContext";
+import { updateUser } from "../services/userService";
 
 const DashboardPage = () => {
   const { currentUser } = useContext(AuthContext);
@@ -29,6 +30,8 @@ const DashboardPage = () => {
         <p className="dashboard__detail">Edad: {currentUser.age}</p>
         <p className="dashboard__detail">País: {currentUser.country}</p>
       </div>
+      {/* Aqui se integra la funcionalidad de actualizar datos */}
+      <updateUser />
     </div>
   );
 };
