@@ -6,8 +6,8 @@ import { HomePage } from "./pages/HomePage";
 import { FavoritesPage } from "./pages/FavoritesPage";
 import { DetailsProductComponent } from "./components/DetailsProductComponent";
 import DashboardPage from "./pages/DashboardPage";
-import { HeaderComponent } from "./components/HeaderComponent";
-import { FooterComponent } from "./components/FooterComponent";
+import HeaderComponent from "./components/HeaderComponent";
+import FooterComponent from "./components/FooterComponent";
 
 function App() {
   return (
