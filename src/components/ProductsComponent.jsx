@@ -2,13 +2,14 @@ import { useContext } from "react";
 import { BooksContext } from "../contexts/BooksContext";
 import { FavoritesContext } from "../contexts/FavoritesContext";
 import { Link } from "react-router-dom";
+import "../styles/ProductsComponentStyle.css";
 
 export const ProductsComponent = () => {
   //nos traemos la data de libros del contexto
   const { books } = useContext(BooksContext);
-  
+
   //marcar en el libro si está dentro de favoritos
-  const { favorites, addFavorites } = useContext(FavoritesContext)
+  const { favorites, addFavorites } = useContext(FavoritesContext);
 
   return (
     <div className="library-list">
@@ -38,9 +39,8 @@ export const ProductsComponent = () => {
             <button className="book-masinfo-buttton">Más info</button>
           </Link>
           <div className="book-favoritos-container">
-
             {/* Boton provisional hasta implementar el corazon */}
-          <button onClick={()=>addFavorites(book)}>Añadir fav</button>
+            <button onClick={() => addFavorites(book)}>Añadir fav</button>
 
             {/* corazon vacio
           <svg onClick={()=>addFavorites(book.id)} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">

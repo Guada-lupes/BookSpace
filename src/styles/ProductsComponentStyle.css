@@ -1,0 +1,124 @@
+/* 
+Paleta de Colores:
+   Blanco: #ffffff
+   Light Background: #efebec
+   Vibrant Pink: #f774a8
+   Strong Red: #d21b53
+   Dark Red: #5d0b24
+   Muted Purple: #8d6b7a
+*/
+
+/* Contenedor principal */
+.library-list {
+  display: grid;
+  grid-template-columns: 1fr; /* Una columna en móviles */
+  gap: 15px;
+  padding: 15px;
+  background-color: #ffffff;
+  font-family: "Lora", serif;
+}
+
+/* Adaptación responsiva en Desktop*/
+@media (min-width: 768px) {
+  .library-list {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+}
+
+/* Tarjeta de producto */
+.library-item {
+  background-color: #efebec;
+  border: 1px solid #d21b53;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+.library-item:hover {
+  transform: scale(1.02);
+}
+
+/* Contenedor para la imagen del producto */
+.book-img-container {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.book-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* Contenedor del nombre y autor */
+.book-name-container {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.book-title {
+  font-size: 1.2rem;
+  color: #5d0b24; /* Dark Red para contraste */
+  margin: 5px 0;
+}
+
+.book-autor {
+  font-size: 1rem;
+  color: #8d6b7a; /* Muted Purple */
+}
+
+/* Contenedor para género y rating */
+.book-genero-container,
+.book-rating-container {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.book-genero,
+.book-rating {
+  font-size: 0.9rem;
+  color: #d21b53;
+}
+
+/* Botón "Más info"*/
+.book-masinfo-buttton {
+  display: block;
+  margin: 0 auto;
+  background-color: #f774a8;
+  color: #ffffff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  font-size: 1rem;
+}
+
+.book-masinfo-buttton:hover {
+  background-color: #d21b53;
+  transform: scale(1.05);
+}
+
+/* Contenedor y estilos para el botón de favoritos */
+.book-favoritos-container {
+  text-align: center;
+  margin-top: 5px;
+}
+
+.book-favoritos-container button {
+  display: block;
+  margin: 0 auto;
+  background-color: #f774a8;
+  color: #ffffff;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.book-favoritos-container button:hover {
+  background-color: #d21b53;
+  transform: scale(1.05);
+}
