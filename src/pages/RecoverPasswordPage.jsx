@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
-import { AuthContext } from "../context/AuthContext";
+import { AuthContext } from "../contexts/AuthContext";
 
-const RecoverPassword = () => {
+const RecoverPasswordPage = () => {
   const [email, setEmail] = useState("");  // Estado para el correo electrónico
   const { recoverPassword, error } = useContext(AuthContext);  // Accedemos a la función de recuperación de contraseña
 
@@ -31,4 +31,4 @@ const RecoverPassword = () => {
   );
 };
 
-export default RecoverPassword;
+export default RecoverPasswordPage;
