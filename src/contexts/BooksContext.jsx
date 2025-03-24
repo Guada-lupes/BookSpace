@@ -12,11 +12,13 @@ export const BooksProvider = ({children}) => {
 useEffect(()=>{
 
 setBooks(getAllBooks())
-
 }, [])
 
+//guardará la palabra para filtrar la busqueda
+const [searchWord, setSearchWord] = useState("")
+
   return (
-    <BooksContext.Provider value={{books}}>
+    <BooksContext.Provider value={{books, searchWord, setSearchWord}}>
         {children}
     </BooksContext.Provider>
   )

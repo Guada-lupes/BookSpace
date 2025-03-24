@@ -14,15 +14,16 @@ const booksData = [
   },
   {
     id: 2,
-    titulo: "Don Quijote de la Mancha",
-    autor: "Miguel de Cervantes",
-    editorial: "Francisco de Robles",
-    genero: "Novela clásica",
-    isbn: "9788424116198",
-    rating: 4.8,
-    imagen: "",
+    titulo: "El laberinto de los espíritus",
+    autor: "Carlos Ruiz Zafón",
+    editorial: "Planeta",
+    genero: "Misterio",
+    isbn: "9788408173724",
+    rating: 4.6,
+    imagen:
+      "https://cdn.pixabay.com/photo/2019/06/26/14/51/labyrinth-4300600_640.jpg",
     sinopsis:
-      "https://cdn.pixabay.com/photo/2017/08/02/04/32/windmill-2570000_640.jpg",
+      "El laberinto de los espíritus es la cuarta y última entrega de la serie El cementerio de los libros olvidados, escrita por Carlos Ruiz Zafón. Cierra la saga con un emocionante misterio.",
   },
   {
     id: 3,
@@ -332,7 +333,7 @@ const booksData = [
     isbn: "9780684801223",
     rating: 4.4,
     imagen:
-      "https://cdn.pixabay.com/photo/2015/09/21/00/51/wedding-rings-949106_1280.jpg",
+      "https://cdn.pixabay.com/photo/2019/02/21/03/39/the-old-man-and-the-sea-4010582_640.jpg",
     sinopsis:
       "El viejo y el mar es una novela del escritor estadounidense Ernest Hemingway. Narra la historia de un viejo pescador que lucha por capturar un enorme pez en el mar.",
   },
@@ -777,19 +778,6 @@ const booksData = [
       "https://cdn.pixabay.com/photo/2018/04/10/23/46/architecture-3309203_640.jpg",
     sinopsis:
       "La casa de los espíritus es la primera novela de Isabel Allende. Narra la historia de varias generaciones de una familia chilena, combinando elementos de realismo mágico.",
-  },
-  {
-    id: 61,
-    titulo: "El laberinto de los espíritus",
-    autor: "Carlos Ruiz Zafón",
-    editorial: "Planeta",
-    genero: "Misterio",
-    isbn: "9788408173724",
-    rating: 4.6,
-    imagen:
-      "https://cdn.pixabay.com/photo/2019/06/26/14/51/labyrinth-4300600_640.jpg",
-    sinopsis:
-      "El laberinto de los espíritus es la cuarta y última entrega de la serie El cementerio de los libros olvidados, escrita por Carlos Ruiz Zafón. Cierra la saga con un emocionante misterio.",
   },
 ];
 
