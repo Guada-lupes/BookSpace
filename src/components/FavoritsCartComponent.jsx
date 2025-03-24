@@ -11,6 +11,7 @@ export const FavoritesCartComponent = () => {
     <div className="favorites-container">
           <h1 className="favorites-container-title">Mis favoritos</h1>
       {favorites.map((favorite) => (
+        
         <>
           <div className="favorite-item">
             <div className="favorite-item-info">
@@ -20,15 +21,19 @@ export const FavoritesCartComponent = () => {
             <div className="favorite-item-img-container">
             <img className="favorite-img" src={favorite.imagen} alt={`miniatura de la imagen relacionada con el titulo ${favorite.titulo}`} />
             </div>
-
+         
             {/* Cambiar esto por un icono de corazon acompañado de eliminar de favoritos*/}
             <button onClick={() => deleteFavorites(favorite.id)}>Eliminar</button>
             <Link to={`/${favorite.id}`}>
             <button>Detalles</button>
-            </Link>
+            </Link> 
+           
           </div>
+
         </>
+
       ))}
+
     </div>
   );
 };

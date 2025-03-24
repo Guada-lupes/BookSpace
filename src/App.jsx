@@ -1,10 +1,19 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 
+/*Rebe*/
+import { Router } from "react-router-dom";
+/*Rebe*/
+
 //Importación de componentes
 import { HomePage } from "./pages/HomePage";
 import { FavoritesPage } from "./pages/FavoritesPage";
 import { DetailsProductComponent } from "./components/DetailsProductComponent";
+
+/*Rebe       import FavoritesPage from "./pages/FavoritesPage";
+/*Rebe*/
+
+
 import DashboardPage from "./pages/DashboardPage";
 import HeaderComponent from "./components/HeaderComponent";
 import FooterComponent from "./components/FooterComponent";
@@ -17,6 +26,9 @@ import { ProductsComponent } from "./components/ProductsComponent";
 function App() {
   return (
     <>
+    {/*Rebe
+    <Router>
+    {/*Rebe*/}
       <HeaderComponent />
       <Routes>
         <Route path="/register" element={<RegisterPage />} />{" "}
@@ -38,6 +50,10 @@ function App() {
         <Route path="/favorites" element={<FavoritesPage />} />
       </Routes>
       <FooterComponent />
+    {/*Rebe
+    </Router>
+    {/*Rebe*/}
+
     </>
   );
 }

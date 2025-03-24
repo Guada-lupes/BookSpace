@@ -9,7 +9,6 @@
         position: relative;
 }
 
-
   .header__logo-img {
     height: auto; 
     }
@@ -17,12 +16,20 @@
   .header__title {
             flex-grow: 1;
             text-align: center;
+            font-size: 30px;
             }
           
   .header__menu-icon {
             cursor: pointer;
+            display: inline-block;
+            width: 40px;
+            height: 40px;
             }
-          
+  .header__menu-icon svg {
+            width:100%;
+            height:100%;
+            }
+
   .header__menu-overlay {
             position: absolute;
             top: 100%;
@@ -47,4 +54,30 @@
   .header__menu-list li a:hover {
             background-color: #b21845;
             }
-           
+
+
+
+  
+            
+  /*MEDIA-QUERIES: (para tablets):*/
+  @media (min-width:768px) {
+    .header__menu-icon {
+      height: 50px;
+      width: 50px;
+    }
+  
+    .header__title {
+    font-size: 50px;
+    }
+  }
+
+  /*MEDIA-QUERIES: (para versión escritorio):*/
+  @media (min-width:1024px){
+    .header__menu-icon {
+      height: 60px;
+      width: 60px;
+    }
+    .header__title {
+      font-size: 60px;
+    }
+  }

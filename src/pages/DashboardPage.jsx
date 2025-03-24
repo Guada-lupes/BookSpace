@@ -30,7 +30,11 @@ const DashboardPage = () => {
         <p className="dashboard__detail">Edad: {currentUser.age}</p>
         <p className="dashboard__detail">País: {currentUser.country}</p>
       </div>
+
       {/* Aqui se integra la funcionalidad de actualizar datos */}
+      {/* Falta formulario que permita actualizar datos
+      o
+      un botón de edit y salga un formulario para editar */}
       <updateUser />
     </div>
   );
