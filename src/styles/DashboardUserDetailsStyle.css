@@ -43,6 +43,34 @@
   margin-bottom: 5px;
 }
 
+/* Contenedor del avatar: centrado y con separación */
+.dashboard-user__profile {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Estilos para la imagen del avatar */
+.dashboard-user__profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #d21b53;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Información del usuario */
+.dashboard-user__info {
+  text-align: left;
+  line-height: 1.6;
+  color: #212121;
+}
+
+/* Detalles individuales */
+.dashboard-user__detail {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
 /* Estilos para los inputs y textarea */
 .update-user__input,
 .update-user__textarea {

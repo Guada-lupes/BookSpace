@@ -2,9 +2,15 @@ import React, { useContext, useState } from "react";
 import { AuthContext } from "../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 import "../styles/UpdateUserFormStyle.css";
+import defaultAvatar from "../assets/icons/default-avatar.png";
 
 const UpdateUserForm = ({ onCancel }) => {
   const { currentUser, updateUserProfile } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  // Si no se recibe onCancel como prop, usamos una función por defecto que redirige a /dashboard.
+  const handleCancel = onCancel ? onCancel : () => navigate("/dashboard");
+
   const [formData, setFormData] = useState({
     fullName: currentUser.fullName,
     profilePicture: currentUser.profilePicture,
@@ -14,7 +20,6 @@ const UpdateUserForm = ({ onCancel }) => {
     country: currentUser.country,
   });
   const [message, setMessage] = useState("");
-  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -22,11 +27,20 @@ const UpdateUserForm = ({ onCancel }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    updateUserProfile(formData);
+
+    // Si la foto de perfil queda en blanco, se asigna el avatar predeterminado.
+    const updatedData = {
+      ...formData,
+      profilePicture:
+        formData.profilePicture.trim() === ""
+          ? defaultAvatar
+          : formData.profilePicture,
+    };
+
+    updateUserProfile(updatedData);
     setMessage("¡Perfil actualizado con éxito!");
     // Redirige al dashboard después de 2 segundos
     setTimeout(() => {
-      console.log("Navegando a /dashboard");
       navigate("/dashboard");
     }, 2000);
   };
@@ -34,6 +48,20 @@ const UpdateUserForm = ({ onCancel }) => {
   return (
     <div className="update-user">
       <h3 className="update-user__title">Editar perfil</h3>
+
+      {/* Vista previa del avatar */}
+      <div className="update-user__avatar-preview">
+        <img
+          src={
+            formData.profilePicture.trim() === ""
+              ? defaultAvatar
+              : formData.profilePicture
+          }
+          alt="Avatar de perfil"
+          className="update-user__avatar-img"
+        />
+      </div>
+
       <form className="update-user__form" onSubmit={handleSubmit}>
         <label className="update-user__label">
           Nombre:
@@ -43,10 +71,11 @@ const UpdateUserForm = ({ onCancel }) => {
             value={formData.fullName}
             onChange={handleChange}
             className="update-user__input"
+            disabled
           />
         </label>
         <label className="update-user__label">
-          URL de la foto de perfil:{" "}
+          URL de la foto de perfil:
           <input
             type="text"
             name="profilePicture"
@@ -72,6 +101,7 @@ const UpdateUserForm = ({ onCancel }) => {
             value={formData.email}
             onChange={handleChange}
             className="update-user__input"
+            disabled
           />
         </label>
         <label className="update-user__label">
@@ -100,7 +130,7 @@ const UpdateUserForm = ({ onCancel }) => {
           </button>
           <button
             type="button"
-            onClick={onCancel}
+            onClick={handleCancel}
             className="update-user__cancel-btn"
           >
             Descartar cambios

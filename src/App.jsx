@@ -17,7 +17,7 @@ import LoginPage from "./pages/LoginPage"; // Página de inicio de sesión
 import LogoutPage from "./pages/LogoutPage"; // Página de cierre de sesión
 import RecoverPasswordPage from "./pages/RecoverPasswordPage"; // Página de recuperación de contraseña
 import UpdateUserForm from "./components/UpdateUserForm";
-import { ProductsComponent } from "./components/ProductsComponent";
+import DashboardUserDetails from "./components/DashboardUserDetails";
 
 function App() {
   return (
@@ -43,7 +43,8 @@ function App() {
           {/* <Route path="/home/products" element={<ProductsComponent />} /> */}
         </Route>
         <Route path="/dashboard" element={<DashboardPage />}>
-          <Route path=":edit" element={<UpdateUserForm />} />
+          <Route index element={<DashboardUserDetails />} />
+          <Route path="edit" element={<UpdateUserForm />} />
         </Route>
         <Route path="/favorites" element={<FavoritesPage />} />
       </Routes>
