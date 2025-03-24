@@ -21,16 +21,16 @@ const UpdateUserForm = ({ onCancel }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     updateUserProfile(formData);
-    setMessage("Profile updated successfully!");
+    setMessage("¡Perfil editado con éxito!");
     // Opcional: se puede llamar a onCancel() para salir del modo edición al actualizar.
   };
 
   return (
     <div className="update-user">
-      <h3 className="update-user__title">Edit Your Profile</h3>
+      <h3 className="update-user__title">Editar perfil</h3>
       <form className="update-user__form" onSubmit={handleSubmit}>
         <label className="update-user__label">
-          Name:
+          Nombre:
           <input
             type="text"
             name="fullName"
@@ -40,7 +40,7 @@ const UpdateUserForm = ({ onCancel }) => {
           />
         </label>
         <label className="update-user__label">
-          Profile Picture URL:
+          URL de la foto de perfil:{" "}
           <input
             type="text"
             name="profilePicture"
@@ -50,7 +50,7 @@ const UpdateUserForm = ({ onCancel }) => {
           />
         </label>
         <label className="update-user__label">
-          About:
+          Sobre mí:
           <textarea
             name="about"
             value={formData.about}
@@ -59,7 +59,7 @@ const UpdateUserForm = ({ onCancel }) => {
           />
         </label>
         <label className="update-user__label">
-          Email:
+          Correo electrónico:
           <input
             type="email"
             name="email"
@@ -69,7 +69,7 @@ const UpdateUserForm = ({ onCancel }) => {
           />
         </label>
         <label className="update-user__label">
-          Age:
+          Edad:
           <input
             type="number"
             name="age"
@@ -79,7 +79,7 @@ const UpdateUserForm = ({ onCancel }) => {
           />
         </label>
         <label className="update-user__label">
-          Country:
+          País:
           <input
             type="text"
             name="country"
@@ -90,14 +90,14 @@ const UpdateUserForm = ({ onCancel }) => {
         </label>
         <div className="update-user__buttons">
           <button type="submit" className="update-user__submit-btn">
-            Save
+            Guardar
           </button>
           <button
             type="button"
             onClick={onCancel}
             className="update-user__cancel-btn"
           >
-            Cancel
+            Descartar cambios
           </button>
         </div>
         {message && <p className="update-user__message">{message}</p>}

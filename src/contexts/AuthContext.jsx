@@ -39,13 +39,13 @@ export const AuthProvider = ({ children }) => {
     localStorage.setItem("currentUser", JSON.stringify(updatedUser));
   };
 
-  // Registro de usuario (puedes ajustar según necesites)
+  // Registro de usuario
   const registerUserHandler = (newUserData) => {
     const result = registerUser(newUserData);
     return result;
   };
 
-  // Opcional: usar useEffect para mantener sincronizado localStorage con cualquier cambio en currentUser
+  // useEffect para mantener sincronizado localStorage con cualquier cambio en currentUser
   useEffect(() => {
     if (currentUser) {
       localStorage.setItem("currentUser", JSON.stringify(currentUser));

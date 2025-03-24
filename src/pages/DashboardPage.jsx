@@ -29,7 +29,7 @@ const DashboardPage = () => {
           className="dashboard__edit-btn"
           onClick={() => setEditMode((prev) => !prev)}
         >
-          {editMode ? "Cancel" : "Edit"}
+          {editMode ? "Cancelar edición" : "Editar"}
         </button>
       </header>
       <div className="dashboard__content">
@@ -44,12 +44,3 @@ const DashboardPage = () => {
 };
 
 export default DashboardPage;
-
-{
-  /* Aqui se integra la funcionalidad de actualizar datos */
-}
-{
-  /* Falta formulario que permita actualizar datos
-      o
-      un botón de edit y salga un formulario para editar */
-}
