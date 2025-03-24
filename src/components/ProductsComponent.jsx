@@ -35,7 +35,7 @@ export const ProductsComponent = () => {
             <p className="book-rating">{book.rating}</p>
           </div>
 
-          <Link to={`/${book.id}`}>
+          <Link to={`/home/${book.id}`}>
             <button className="book-masinfo-buttton">Más info</button>
           </Link>
           <div className="book-favoritos-container">

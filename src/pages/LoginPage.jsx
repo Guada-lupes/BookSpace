@@ -13,7 +13,7 @@ const LoginPage = () => {
     e.preventDefault();
     const isLoggedIn = login(username, password); // Llamamos a la función de login
     if (isLoggedIn) {
-      navigate("/HomePage"); // Si el login es exitoso, redirigimos al usuario a la página principal
+      navigate("/home"); // Si el login es exitoso, redirigimos al usuario a la página principal
     }
   };
 
@@ -34,7 +34,8 @@ const LoginPage = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)} // Actualizamos la contraseña
         />
-        <button type="submit">Iniciar Sesión</button> {/* Botón de inicio de sesión */}
+        <button type="submit">Iniciar Sesión</button>{" "}
+        {/* Botón de inicio de sesión */}
       </form>
     </div>
   );
