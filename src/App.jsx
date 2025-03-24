@@ -1,10 +1,6 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 
-/*Rebe*/
-import { Router } from "react-router-dom";
-/*Rebe*/
-
 //Importación de componentes
 import { HomePage } from "./pages/HomePage";
 import { FavoritesPage } from "./pages/FavoritesPage";
@@ -13,7 +9,6 @@ import { DetailsProductComponent } from "./components/DetailsProductComponent";
 /*Rebe       import FavoritesPage from "./pages/FavoritesPage";
 /*Rebe*/
 
-
 import DashboardPage from "./pages/DashboardPage";
 import HeaderComponent from "./components/HeaderComponent";
 import FooterComponent from "./components/FooterComponent";
@@ -21,12 +16,13 @@ import RegisterPage from "./pages/RegisterPage"; // Página de registro
 import LoginPage from "./pages/LoginPage"; // Página de inicio de sesión
 import LogoutPage from "./pages/LogoutPage"; // Página de cierre de sesión
 import RecoverPasswordPage from "./pages/RecoverPasswordPage"; // Página de recuperación de contraseña
+import UpdateUserForm from "./components/UpdateUserForm";
 import { ProductsComponent } from "./components/ProductsComponent";
 
 function App() {
   return (
     <>
-    {/*Rebe
+      {/*Rebe
     <Router>
     {/*Rebe*/}
       <HeaderComponent />
@@ -46,14 +42,15 @@ function App() {
           <Route path=":id" element={<DetailsProductComponent />} />
           {/* <Route path="/home/products" element={<ProductsComponent />} /> */}
         </Route>
-        <Route path="/dashboard" element={<DashboardPage />}></Route>
+        <Route path="/dashboard" element={<DashboardPage />}>
+          <Route path=":edit" element={<UpdateUserForm />} />
+        </Route>
         <Route path="/favorites" element={<FavoritesPage />} />
       </Routes>
       <FooterComponent />
-    {/*Rebe
+      {/*Rebe
     </Router>
     {/*Rebe*/}
-
     </>
   );
 }

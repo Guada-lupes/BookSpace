@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../contexts/AuthContext";
+import { useNavigate } from "react-router-dom";
 import "../styles/UpdateUserFormStyle.css";
 
 const UpdateUserForm = ({ onCancel }) => {
@@ -13,6 +14,7 @@ const UpdateUserForm = ({ onCancel }) => {
     country: currentUser.country,
   });
   const [message, setMessage] = useState("");
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -21,8 +23,12 @@ const UpdateUserForm = ({ onCancel }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     updateUserProfile(formData);
-    setMessage("¡Perfil editado con éxito!");
-    // Opcional: se puede llamar a onCancel() para salir del modo edición al actualizar.
+    setMessage("¡Perfil actualizado con éxito!");
+    // Redirige al dashboard después de 2 segundos
+    setTimeout(() => {
+      console.log("Navegando a /dashboard");
+      navigate("/dashboard");
+    }, 2000);
   };
 
   return (
