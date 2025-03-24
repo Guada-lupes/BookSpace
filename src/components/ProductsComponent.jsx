@@ -10,6 +10,7 @@ export const ProductsComponent = ({ books }) => {
   const { favorites, addFavorites } = useContext(FavoritesContext);
 
   return (
+    // PEPE
     <div className="library-list">
       {books.map((book) => (
         <div key={book.id} className="library-item">
