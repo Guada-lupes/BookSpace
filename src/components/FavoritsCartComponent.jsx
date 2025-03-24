@@ -13,7 +13,7 @@ export const FavoritesCartComponent = () => {
       {favorites.map((favorite) => (
         
         <>
-          <div className="favorite-item">
+          <div key={favorite.id} className="favorite-item">
             <div className="favorite-item-info">
             <h3 className="favorite-item-title">{favorite.titulo}</h3>
             <p className="favorite-item-autor">{favorite.autor}</p>

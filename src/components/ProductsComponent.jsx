@@ -1,13 +1,31 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { FavoritesContext } from "../contexts/FavoritesContext";
 import { Link } from "react-router-dom";
+import { HeartComponent } from "./heartComponent";
 import "../styles/ProductsComponentStyle.css";
 
 export const ProductsComponent = ({ books }) => {
   // Aquí cambiamos el uso de useContext por prop
 
   //marcar en el libro si está dentro de favoritos
-  const { favorites, addFavorites } = useContext(FavoritesContext);
+  const { favorites, addFavorites, deleteFavorites } = useContext(FavoritesContext);
+
+  const [isFavorite, setIsFavorite] = useState(false)
+
+  function addFavoriteHandle(book) {
+    const fav = favorites.find((item)=> item.id === book.id)
+    fav ? addFavorites(book) : deleteFavorites(book.id)
+
+    //renderizado condicional corazon
+    const heart = fav ? (<svg onClick={()=>addFavorites(book.id)} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+    </svg>) : (<svg onClick={()=>addFavorites(book.id)} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+    <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+  </svg>)
+    
+  }
+
+
 
   return (
     // PEPE
@@ -39,8 +57,8 @@ export const ProductsComponent = ({ books }) => {
           </Link>
           <div className="book-favoritos-container">
             {/* Boton provisional hasta implementar el corazon */}
-            <button onClick={() => addFavorites(book)}>Añadir fav</button>
-
+            {/* <button onClick={() => addFavoriteHandle(book)}>Añadir fav</button> */}
+            <HeartComponent book={book}/>
             {/* corazon vacio
           <svg onClick={()=>addFavorites(book.id)} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
   <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
