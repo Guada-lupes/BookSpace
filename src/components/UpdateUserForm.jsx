@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../contexts/AuthContext";
-// importar estilado cuando lo haya
+import "../styles/UpdateUserFormStyle.css";
 
 const UpdateUserForm = ({ onCancel }) => {
   const { currentUser, updateUserProfile } = useContext(AuthContext);

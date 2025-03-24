@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../contexts/AuthContext";
-// Importar estilado
+import "../styles/DashboardUserDetailsStyle.css";
+
 const DashboardUserDetails = () => {
   const { currentUser } = useContext(AuthContext);
 
