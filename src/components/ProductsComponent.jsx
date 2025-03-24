@@ -1,12 +1,10 @@
 import { useContext } from "react";
-import { BooksContext } from "../contexts/BooksContext";
 import { FavoritesContext } from "../contexts/FavoritesContext";
 import { Link } from "react-router-dom";
 import "../styles/ProductsComponentStyle.css";
 
-export const ProductsComponent = () => {
-  //nos traemos la data de libros del contexto
-  const { books } = useContext(BooksContext);
+export const ProductsComponent = ({ books }) => {
+  // Aquí cambiamos el uso de useContext por prop
 
   //marcar en el libro si está dentro de favoritos
   const { favorites, addFavorites } = useContext(FavoritesContext);
