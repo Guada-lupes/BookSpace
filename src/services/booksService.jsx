@@ -22,7 +22,7 @@ const booksData = [
     rating: 4.8,
     imagen: "",
     sinopsis:
-      "https://cdn.pixabay.com/photo/2012/11/28/08/59/windmills-67511_1280.jpg",
+      "https://cdn.pixabay.com/photo/2017/08/02/04/32/windmill-2570000_640.jpg",
   },
   {
     id: 3,
