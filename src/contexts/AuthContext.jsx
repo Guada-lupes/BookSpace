@@ -1,42 +1,63 @@
-import React, { createContext, useState } from "react";
-import { checkUserCredentials } from "../services/userService";
+import React, { createContext, useState, useEffect } from "react";
+import {
+  checkUserCredentials,
+  updateUser,
+  registerUser,
+} from "../services/userService";
 
-// Creamos el contexto con un valor por defecto (null)
 export const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
-  // currentUser contendrá al usuario autenticado (o null si no hay ninguno)
-  const [currentUser, setCurrentUser] = useState(null);
+  // Estados: inicializamos currentUser a partir de localStorage si existe
+  const [currentUser, setCurrentUser] = useState(() => {
+    const savedUser = localStorage.getItem("currentUser");
+    return savedUser ? JSON.parse(savedUser) : null;
+  });
 
-  // Función para iniciar sesión:
+  // Iniciar sesión: guarda el usuario tanto en estado como en localStorage
   const login = (username, password) => {
-    // Usamos la función que definimos en userService para validar credenciales
     const user = checkUserCredentials(username, password);
     if (user) {
       setCurrentUser(user);
-      return true; // Login correcto
+      localStorage.setItem("currentUser", JSON.stringify(user));
+      return true;
     }
-    return false; // Login fallido
+    return false;
   };
 
-  // Función para cerrar sesión
+  // Cerrar sesión: elimina al usuario del estado y de localStorage
   const logout = () => {
     setCurrentUser(null);
+    localStorage.removeItem("currentUser");
   };
 
-  // Función para actualizar el perfil del usuario
+  // Actualizar perfil: modifica los datos del usuario y actualiza en localStorage
   const updateUserProfile = (updateData) => {
+    if (!currentUser) return;
     const updatedUser = updateUser(currentUser.id, updateData);
-    // Actualizamos el estado con la nueva data del usuario
     setCurrentUser(updatedUser);
+    localStorage.setItem("currentUser", JSON.stringify(updatedUser));
   };
 
-  // Valor que se proveerá a todos los componentes consumidores del contexto
+  // Registro de usuario (puedes ajustar según necesites)
+  const registerUserHandler = (newUserData) => {
+    const result = registerUser(newUserData);
+    return result;
+  };
+
+  // Opcional: usar useEffect para mantener sincronizado localStorage con cualquier cambio en currentUser
+  useEffect(() => {
+    if (currentUser) {
+      localStorage.setItem("currentUser", JSON.stringify(currentUser));
+    }
+  }, [currentUser]);
+
   const authContextValue = {
     currentUser,
     login,
     logout,
     updateUserProfile,
+    registerUser: registerUserHandler,
   };
 
   return (

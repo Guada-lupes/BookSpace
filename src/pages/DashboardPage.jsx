@@ -2,8 +2,10 @@
 
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../contexts/AuthContext";
+import DashboardUserDetails from "../components/DashboardUserDetails";
 import UpdateUserForm from "../components/UpdateUserForm";
 import "../styles/DashboardStyle.css";
+
 const DashboardPage = () => {
   const { currentUser } = useContext(AuthContext);
   const [editMode, setEditMode] = useState(false);
