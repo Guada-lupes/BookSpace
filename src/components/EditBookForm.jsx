@@ -2,7 +2,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import { AdminsBooksContext } from "../contexts/AdminsBooksContext";
 import { useParams, useNavigate } from "react-router-dom";
-import "../styles/EditBookFormStyle.css";
 
 const EditBookForm = () => {
   const { id } = useParams();
