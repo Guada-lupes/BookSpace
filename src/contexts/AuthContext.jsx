@@ -5,30 +5,36 @@ import {
   registerUser,
 } from "../services/userService";
 
+// Creamos el contexto de autenticación
 export const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
-  // Estados: inicializamos currentUser a partir de localStorage si existe
-  const [currentUser, setCurrentUser] = useState(() => {
-    const savedUser = localStorage.getItem("currentUser");
-    return savedUser ? JSON.parse(savedUser) : null;
-  });
+  const [currentUser, setCurrentUser] = useState(null); // Estado para almacenar el usuario autenticado
 
-  // Iniciar sesión: guarda el usuario tanto en estado como en localStorage
-  const login = (username, password) => {
-    const user = checkUserCredentials(username, password);
-    if (user) {
-      setCurrentUser(user);
-      localStorage.setItem("currentUser", JSON.stringify(user));
-      return true;
+// useEffect para recuperar el usuario guardado en localStorage al recargar la página
+  useEffect(() => {
+    const storedUser = localStorage.getItem("currentUser");
+    if (storedUser) {
+      setCurrentUser(JSON.parse(storedUser)); // Convertimos el string en objeto y lo guardamos en el estado
     }
-    return false;
+  }, []);
+  
+
+  // Función para iniciar sesión
+  const login = (username, password) => {
+    const user = checkUserCredentials(username, password); // Verificamos credenciales con userService
+    if (user) {
+      setCurrentUser(user); // Guardamos el usuario en el estado
+      localStorage.setItem("currentUser", JSON.stringify(user)); // Guardamos en localStorage
+      return true; // Devolvemos true si el login es exitoso
+    }
+    return false; // Devolvemos false si el login falla
   };
 
-  // Cerrar sesión: elimina al usuario del estado y de localStorage
+  // Función para cerrar sesión
   const logout = () => {
-    setCurrentUser(null);
-    localStorage.removeItem("currentUser");
+    setCurrentUser(null); // Borramos el usuario del estado
+    localStorage.removeItem("currentUser"); // Eliminamos el usuario de localStorage
   };
 
   // Actualizar perfil: modifica los datos del usuario y actualiza en localStorage
@@ -45,12 +51,6 @@ export const AuthProvider = ({ children }) => {
     return result;
   };
 
-  // useEffect para mantener sincronizado localStorage con cualquier cambio en currentUser
-  useEffect(() => {
-    if (currentUser) {
-      localStorage.setItem("currentUser", JSON.stringify(currentUser));
-    }
-  }, [currentUser]);
 
   const authContextValue = {
     currentUser,
