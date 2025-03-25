@@ -107,3 +107,9 @@ export const updateUser = (id, updateData) => {
 //   username: "newPoetita",
 //   email: "new.email@example.com"
 // });
+
+export const registerUser = (newUserData) => {
+  // Lógica para registrar el usuario...
+  // ...
+  return { success: true, user: newUserData };
+};

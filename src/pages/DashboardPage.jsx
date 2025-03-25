@@ -1,41 +1,44 @@
 // Dashboard - Renderizado de usuario
 
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { AuthContext } from "../contexts/AuthContext";
-import { updateUser } from "../services/userService";
+import DashboardUserDetails from "../components/DashboardUserDetails";
+import UpdateUserForm from "../components/UpdateUserForm";
+import "../styles/DashboardStyle.css";
 
 const DashboardPage = () => {
   const { currentUser } = useContext(AuthContext);
-  // Si el usuario no está  autenticado no se renderiza nada
-  if (!currentUser) {
-    return null;
-  }
+  const [editMode, setEditMode] = useState(false);
 
+  // Si no hay usuario autenticado, se podría renderizar un mensaje o un placeholder
+  if (!currentUser) {
+    return (
+      <div className="dashboard__placeholder">
+        <p>Debes estar logueado para acceder a tu dashboard.</p>
+      </div>
+    );
+  }
   return (
     <div className="dashboard">
-      <h2 className="dashboard__title">
-        {" "}
-        ¡Bienvenido, {currentUser.fullName}!
-      </h2>
-      <div className="dashboard__user-info">
-        <img
-          src={currentUser.profilePicture}
-          alt={`Perfil de ${currentUser.userName}'`}
-          className="dashboard__profile-picture"
-        />
+      <header className="dashboard__header">
+        <h2 className="dashboard__title">
+          {" "}
+          ¡Bienvenido, {currentUser.fullName}!
+        </h2>
+        <button
+          className="dashboard__edit-btn"
+          onClick={() => setEditMode((prev) => !prev)}
+        >
+          {editMode ? "Cancelar edición" : "Editar"}
+        </button>
+      </header>
+      <div className="dashboard__content">
+        {editMode ? (
+          <UpdateUserForm onCancel={() => setEditMode(false)} />
+        ) : (
+          <DashboardUserDetails />
+        )}
       </div>
-      <div className="dashboard__user-details">
-        <p className="dashboard__detail">Sobre mí: {currentUser.about}</p>
-        <p className="dashboard__detail">Email: {currentUser.email}</p>
-        <p className="dashboard__detail">Edad: {currentUser.age}</p>
-        <p className="dashboard__detail">País: {currentUser.country}</p>
-      </div>
-
-      {/* Aqui se integra la funcionalidad de actualizar datos */}
-      {/* Falta formulario que permita actualizar datos
-      o
-      un botón de edit y salga un formulario para editar */}
-      <updateUser />
     </div>
   );
 };
