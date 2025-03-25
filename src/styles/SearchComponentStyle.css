@@ -1,0 +1,9 @@
+.search-container{
+display: flex;
+flex-direction: row;
+margin-bottom: 20px;
+    .search-input{
+        width: 150px;
+        margin-right: 5px;
+    }
+}

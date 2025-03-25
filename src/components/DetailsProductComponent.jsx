@@ -50,7 +50,6 @@ export function DetailsProductComponent() {
       <p>{`ISBN: ${book.isbn}`}</p>
       <p>{`Rating: ${book.rating}`}</p>
       <p>{`Sinopsis: ${book.sinopsis}`}</p>
-      <button onClick={() => navigate("/home")}>Atrás</button>
     </div>
   );
 }

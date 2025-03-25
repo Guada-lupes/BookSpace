@@ -4,12 +4,10 @@
   flex-direction: column;
   align-items: anchor-center;
 
-  .favorites-container-title {
-    margin-bottom: 20px;
-  }
   .favorite-item {
     border: solid;
     width: 90%;
+    margin-bottom: 20px;
   }
   .favorite-item-img-container {
     width: 200px;
@@ -29,12 +27,13 @@
       justify-items: center;
     }
     .favorite-item-title {
-      font-size: x-large;
+      font-size: larger;
       padding-bottom: 10px;
       text-align: center;
     }
     .favorite-item-autor {
-      font-size: large;
+      font-size: small;
+      text-align: center;
     }
   }
   .favorite-item-buttons {

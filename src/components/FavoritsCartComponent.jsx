@@ -10,7 +10,6 @@ export const FavoritesCartComponent = () => {
 
   return (
     <div className="favorites-container">
-      <h1 className="favorites-container-title">Mis favoritos</h1>
       {favorites.map((favorite) => (
         <>
           <div key={favorite.id} className="favorite-item">
