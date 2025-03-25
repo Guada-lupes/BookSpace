@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../contexts/AuthContext";
-// Importar estilado
+import "../styles/DashboardUserDetailsStyle.css";
+
 const DashboardUserDetails = () => {
   const { currentUser } = useContext(AuthContext);
 
@@ -15,19 +16,19 @@ const DashboardUserDetails = () => {
       </div>
       <div className="dashboard-user__info">
         <p className="dashboard-user__detail">
-          <strong>Name:</strong> {currentUser.fullName}
+          <strong>Nombre:</strong> {currentUser.fullName}
         </p>
         <p className="dashboard-user__detail">
-          <strong>About:</strong> {currentUser.about}
+          <strong>Sobre mí:</strong> {currentUser.about}
         </p>
         <p className="dashboard-user__detail">
-          <strong>Email:</strong> {currentUser.email}
+          <strong>Correo electrónico:</strong> {currentUser.email}
         </p>
         <p className="dashboard-user__detail">
-          <strong>Age:</strong> {currentUser.age}
+          <strong>Edad:</strong> {currentUser.age}
         </p>
         <p className="dashboard-user__detail">
-          <strong>Country:</strong> {currentUser.country}
+          <strong>País:</strong> {currentUser.country}
         </p>
       </div>
     </div>
