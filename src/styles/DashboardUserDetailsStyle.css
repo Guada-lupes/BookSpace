@@ -133,3 +133,24 @@
   text-align: center;
   font-weight: bold;
 }
+
+.admin-btn {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  background-color: #f774a8;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+.admin-btn:hover {
+  background-color: #d21b53;
+  transform: scale(1.05);
+}

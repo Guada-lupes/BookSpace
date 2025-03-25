@@ -37,7 +37,9 @@ const DashboardUserDetails = () => {
         <p className="dashboard-user__detail">
           <strong>País:</strong> {currentUser.country}
         </p>
-        <button onClick={() => navigate("/admin")}>Gestión como admin</button>
+        <button onClick={() => navigate("/admin")} className="admin-btn">
+          Gestión como admin
+        </button>
       </div>
     </div>
   );
