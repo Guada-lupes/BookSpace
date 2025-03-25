@@ -1,0 +1,102 @@
+/* EditBookFormStyle.css
+   Paleta de Colores:
+     - Blanco:             #ffffff
+     - Light Background:   #efebec
+     - Vibrant Pink:       #f774a8
+     - Strong Red:         #d21b53
+     - Dark Red:           #5d0b24
+     - Muted Purple:       #8d6b7a
+   Fuente: 'Lora', serif
+*/
+
+/* Contenedor principal del formulario */
+.edit-book-form {
+  background-color: #efebec;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-family: "Lora", serif;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+/* Título del formulario */
+.edit-book-form__title {
+  font-size: 1.8rem;
+  color: #d21b53;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Estilo del formulario, dispuestos en columna */
+.edit-book-form__form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Etiquetas para los inputs */
+.edit-book-form__label {
+  font-size: 1rem;
+  color: #5d0b24;
+  margin-bottom: 5px;
+}
+
+/* Estilos para los inputs y el textarea */
+.edit-book-form__input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d21b53;
+  border-radius: 4px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.edit-book-form__textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d21b53;
+  border-radius: 4px;
+  font-size: 1rem;
+  min-height: 80px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+/* Botón para enviar los cambios */
+.edit-book-form__btn {
+  padding: 10px;
+  background-color: #f774a8;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+.edit-book-form__cancel-btn {
+  padding: 10px;
+  background-color: #f774a8;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+.edit-book-form__cancel-btn:hover {
+  background-color: #d21b53;
+}
+.edit-book-form__btn:hover {
+  background-color: #d21b53;
+}
+
+/* Estilo para el mensaje (éxito o error) */
+.edit-book-form__message {
+  margin-top: 10px;
+  color: #d21b53;
+  font-weight: bold;
+  text-align: center;
+}

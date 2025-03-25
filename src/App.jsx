@@ -47,9 +47,10 @@ function App() {
           <Route index element={<DashboardUserDetails />} />
           <Route path="edit" element={<UpdateUserForm />} />
         </Route>
-        {/* Ruta para admin, protegida dentro de AdminPage */}
+        {/* Rutas para admin */}
         <Route path="/admin" element={<AdminPage />}>
-          <Route path="books" element={<AdminBooksPage />}>
+          <Route path="books">
+            <Route index element={<AdminBooksPage />} />
             <Route path="add" element={<AddBookForm />} />
             <Route path="edit/:id" element={<EditBookForm />} />
           </Route>

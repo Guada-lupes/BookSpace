@@ -41,9 +41,25 @@
   cursor: pointer;
   transition: background-color 0.3s;
 }
+.add-book-form__cancel-btn {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #f774a8;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
 .add-book-form__btn:hover {
   background-color: #d21b53;
 }
+
+.add-book-form__cancel-btn:hover {
+  background-color: #d21b53;
+}
+
 .add-book-form__message {
   margin-top: 10px;
   font-weight: bold;

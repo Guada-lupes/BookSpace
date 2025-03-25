@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { AdminsBooksContext } from "../contexts/AdminsBooksContext";
 import "../styles/AddBookFormStyle.css";
 
-const AddBookForm = () => {
+const AddBookForm = ({ onClose }) => {
   const { addBook } = useContext(AdminsBooksContext);
   const navigate = useNavigate();
 
@@ -27,8 +27,15 @@ const AddBookForm = () => {
     addBook(formData);
     setMensaje("¡Libro añadido con éxito!");
     setTimeout(() => {
-      navigate("/admin/books");
+      if (onClose) onClose();
+      else navigate("/admin/books");
     }, 1500);
+  };
+
+  // Función para cancelar y volver atrás
+  const handleCancel = () => {
+    if (onClose) onClose();
+    else navigate("/admin/books");
   };
 
   return (
@@ -87,6 +94,13 @@ const AddBookForm = () => {
         </label>
         <button type="submit" className="add-book-form__btn">
           Agregar Libro
+        </button>
+        <button
+          type="button"
+          onClick={handleCancel}
+          className="add-book-form__cancel-btn"
+        >
+          Cancelar
         </button>
       </form>
       {mensaje && <p className="add-book-form__message">{mensaje}</p>}

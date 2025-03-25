@@ -2,8 +2,9 @@
 import React, { useState, useContext, useEffect } from "react";
 import { AdminsBooksContext } from "../contexts/AdminsBooksContext";
 import { useParams, useNavigate } from "react-router-dom";
+import "../styles/EditBookFormStyle.css";
 
-const EditBookForm = () => {
+const EditBookForm = ({ onClose }) => {
   const { id } = useParams();
   const { books, updateBook } = useContext(AdminsBooksContext);
   const navigate = useNavigate();
@@ -42,8 +43,14 @@ const EditBookForm = () => {
     updateBook(Number(id), formData);
     setMensaje("¡Libro actualizado con éxito!");
     setTimeout(() => {
-      navigate("/admin/books");
+      if (onClose) onClose();
+      else navigate("/admin/books");
     }, 1500);
+  };
+
+  const handleCancel = () => {
+    if (onClose) onClose();
+    else navigate("/admin/books");
   };
 
   return (
@@ -103,6 +110,13 @@ const EditBookForm = () => {
         </label>
         <button type="submit" className="edit-book-form__btn">
           Actualizar Libro
+        </button>
+        <button
+          type="button"
+          onClick={handleCancel}
+          className="edit-book-form__cancel-btn"
+        >
+          Cancelar
         </button>
       </form>
       {mensaje && <p className="edit-book-form__message">{mensaje}</p>}
