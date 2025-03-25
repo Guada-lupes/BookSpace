@@ -1,0 +1,74 @@
+/* src/styles/components/AdminBooksPageStyle.css */
+.admin-books {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.admin-books__title {
+  font-size: 1.8rem;
+  color: #d21b53;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.admin-books__add-btn {
+  display: block;
+  margin: 0 auto 20px;
+  padding: 10px 20px;
+  background-color: #f774a8;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.admin-books__add-btn:hover {
+  background-color: #d21b53;
+}
+.admin-books__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+@media (min-width: 768px) {
+  .admin-books__list {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+.admin-books__item {
+  padding: 15px;
+  background-color: #efebec;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.admin-books__item-title {
+  font-size: 1.2rem;
+  color: #5d0b24;
+  margin-bottom: 10px;
+}
+.admin-books__actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+.admin-books__edit-btn,
+.admin-books__delete-btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.admin-books__edit-btn {
+  background-color: #8d6b7a;
+  color: #ffffff;
+}
+.admin-books__edit-btn:hover {
+  background-color: #5d0b24;
+}
+.admin-books__delete-btn {
+  background-color: #f774a8;
+  color: #ffffff;
+}
+.admin-books__delete-btn:hover {
+  background-color: #d21b53;
+}

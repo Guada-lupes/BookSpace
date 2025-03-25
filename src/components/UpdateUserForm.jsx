@@ -18,6 +18,8 @@ const UpdateUserForm = ({ onCancel }) => {
     email: currentUser.email,
     age: currentUser.age,
     country: currentUser.country,
+    following: currentUser.following,
+    followers: currentUser.followers,
   });
   const [message, setMessage] = useState("");
 
@@ -43,6 +45,15 @@ const UpdateUserForm = ({ onCancel }) => {
     setTimeout(() => {
       navigate("/dashboard");
     }, 2000);
+  };
+
+  const AdminButton = () => {
+    const { currentUser } = useContext(AuthContext);
+    console.log("currentUser", currentUser);
+    if (!currentUser || currentUser.role !== "admin") {
+      return null;
+    }
+    return <button>Gestión como admin</button>;
   };
 
   return (
