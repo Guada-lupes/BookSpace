@@ -18,6 +18,7 @@ Paleta de Colores:
   font-family: "Lora", serif;
 }
 
+
 /* Adaptación responsiva en Desktop*/
 @media (min-width: 768px) {
   .library-list {

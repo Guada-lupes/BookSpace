@@ -1,4 +1,6 @@
+
 import React from "react";
+
 import '../styles/FooterStyle.css'; // Ruta de donde coge estilos el componente Footer. 
 
 const Footer = () => {
@@ -32,7 +34,7 @@ const Footer = () => {
       </div>
       <div className="footer__legal-info">
         <p className="footer__copyright">
-          &copy; {new Date().getFullYear()} BOOKSPACE. Todos los derechos reservados.
+          &copy; {new Date().getFullYear()} BOOKSPACE. Todos los derechos reservados. 
         </p>
         <a href="/politica-de-cookies" className="footer__legal-link">
           Política de Cookies
