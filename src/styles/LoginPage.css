@@ -1,0 +1,36 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.modal button {
+    margin-top: 10px;
+}
+
+.login-page {
+    width: 350px;
+    margin: 20px auto;
+    background-color: #efebec;
+    font-family: "Roboto", sans-serif;
+    color: #8d6b7a;
+}
+
+.login-page p {
+    color: khaki;
+    background-color: rgb(55, 45, 47);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}

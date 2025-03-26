@@ -16,7 +16,7 @@ import HeaderComponent from "./components/HeaderComponent";
 import FooterComponent from "./components/FooterComponent";
 import RegisterPage from "./pages/RegisterPage"; // Página de registro
 import LoginPage from "./pages/LoginPage"; // Página de inicio de sesión
-import RecoverPasswordPage from "./pages/RecoverPasswordPage"; // Página de recuperación de contraseña
+
 import { ProductsComponent } from "./components/ProductsComponent";
 
 function App() {
@@ -34,11 +34,6 @@ function App() {
         {/* Página de inicio de sesión */}
         <Route path="/logout" element={<LogoutButton />} /> {/*Botón de logout */}
     
-        
-        <Route path="/recover-password"
-          element={<RecoverPasswordPage />}
-        />{" "}
-        {/* Página de recuperación de contraseña */}
         <Route path="/home" element={<HomePage />}>
           <Route path=":id" element={<DetailsProductComponent />} />
           {/* <Route path="/home/products" element={<ProductsComponent />} /> */}
