@@ -47,15 +47,6 @@ const UpdateUserForm = ({ onCancel }) => {
     }, 2000);
   };
 
-  const AdminButton = () => {
-    const { currentUser } = useContext(AuthContext);
-    console.log("currentUser", currentUser);
-    if (!currentUser || currentUser.role !== "admin") {
-      return null;
-    }
-    return <button>Gestión como admin</button>;
-  };
-
   return (
     <div className="update-user">
       <h3 className="update-user__title">Editar perfil</h3>
