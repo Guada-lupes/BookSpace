@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import { FavoritesContext } from "../contexts/FavoritesContext";
 import { Link } from "react-router-dom";
-import "../styles/FavoritesCartComponentStyle.css";
 import { HeartComponent } from "./heartComponent";
+import "../styles/FavoritesCartComponentStyle.css"
 
 export const FavoritesCartComponent = () => {
   const { deleteFavorites, favorites } = useContext(FavoritesContext);

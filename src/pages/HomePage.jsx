@@ -29,27 +29,29 @@ export const HomePage = () => {
   const currentBooks = filteredBooks.slice(indexOfFirstBook, indexOfLastBook);
 
   return (
-    <div className="home-page">
-      {!id && <SearchComponent />}
-      <h1 className="home-page__title">Tu comunidad literaria</h1>
-      <div className="home-page__content">
-        {id ? (
-          <>
-            <BackButton url={url}/>
-            <Outlet />
-          </>
-        ) : (
-          <>
-            <ProductsComponent books={currentBooks} />
-            <Pagination
-              totalBooks={books.length}
-              booksPerPage={booksPerPage}
-              setCurrentPage={setCurrentPage}
-              currentPage={currentPage}
-            />
-          </>
-        )}
+    <>
+      {id && <BackButton url={url} />}
+      <div className="home-page">
+        {!id && <SearchComponent />}
+        <h1 className="home-page__title">Tu comunidad literaria</h1>
+        <div className="home-page__content">
+          {id ? (
+            <>
+              <Outlet />
+            </>
+          ) : (
+            <>
+              <ProductsComponent books={currentBooks} />
+              <Pagination
+                totalBooks={books.length}
+                booksPerPage={booksPerPage}
+                setCurrentPage={setCurrentPage}
+                currentPage={currentPage}
+              />
+            </>
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
 };

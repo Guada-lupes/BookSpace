@@ -14,12 +14,14 @@ export const FavoritesPage = () => {
     <>
       <BackButton url={url} />
       <section className="favorite-section">
-        <h1 className="favorites-container-title">Mis favoritos</h1>
+      <h1 className="favorites-container-title">Mis favoritos</h1>
+        <div className="favorite-main-container">
         {favorites.length === 0 ? (
           <EmptyCartComponent />
         ) : (
           <FavoritesCartComponent />
         )}
+        </div>
       </section>
     </>
   );
