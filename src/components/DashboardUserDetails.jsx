@@ -7,9 +7,8 @@ const DashboardUserDetails = () => {
   const { currentUser } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  // Solo se renderiza si el usuario tiene el rol admin
-  if (!currentUser || currentUser.role !== "admin") {
-    return null;
+  if (!currentUser) {
+    return <p>No has iniciado sesión</p>;
   }
 
   return (
@@ -37,9 +36,17 @@ const DashboardUserDetails = () => {
         <p className="dashboard-user__detail">
           <strong>País:</strong> {currentUser.country}
         </p>
-        <button onClick={() => navigate("/admin")} className="admin-btn">
-          Gestión como admin
-        </button>
+        <p className="dashboard-user__detail">
+          <strong>Siguiendo:</strong> {currentUser.following}
+        </p>
+        <p className="dashboard-user__detail">
+          <strong>Seguidores:</strong> {currentUser.followers}
+        </p>
+        {currentUser.role === "admin" && (
+          <button onClick={() => navigate("/admin")} className="admin-btn">
+            Gestión como admin
+          </button>
+        )}
       </div>
     </div>
   );
