@@ -1,0 +1,129 @@
+/* src/styles/components/AdminBooksPageStyle.css */
+.admin-books {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+/* Contenedor para la imagen del libro */
+.admin-books__img-container {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Estilo para la imagen del libro */
+.admin-books__img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid #d21b53; /* Borde opcional para acentuar */
+}
+
+/* Contenedor para la información completa del libro */
+.admin-books__info {
+  text-align: left;
+  font-size: 1rem;
+  color: #5d0b24;
+  margin-bottom: 10px;
+}
+
+/* Título del libro */
+.admin-books__item-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Información adicional: autor, género y rating */
+.admin-books__item-author,
+.admin-books__item-genre,
+.admin-books__item-rating {
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+
+/* Separación para cada dato */
+.admin-books__item-author::before {
+  content: "Autor: ";
+  font-weight: bold;
+}
+
+.admin-books__item-genre::before {
+  content: "Género: ";
+  font-weight: bold;
+}
+
+.admin-books__item-rating::before {
+  content: "Rating: ";
+  font-weight: bold;
+}
+
+.admin-books__title {
+  font-size: 1.8rem;
+  color: #d21b53;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.admin-books__add-btn {
+  display: block;
+  margin: 0 auto 20px;
+  padding: 10px 20px;
+  background-color: #f774a8;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.admin-books__add-btn:hover {
+  background-color: #d21b53;
+}
+.admin-books__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+@media (min-width: 768px) {
+  .admin-books__list {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+.admin-books__item {
+  padding: 15px;
+  background-color: #efebec;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.admin-books__item-title {
+  font-size: 1.2rem;
+  color: #5d0b24;
+  margin-bottom: 10px;
+}
+.admin-books__actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+.admin-books__edit-btn,
+.admin-books__delete-btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.admin-books__edit-btn {
+  background-color: #8d6b7a;
+  color: #ffffff;
+}
+.admin-books__edit-btn:hover {
+  background-color: #5d0b24;
+}
+.admin-books__delete-btn {
+  background-color: #f774a8;
+  color: #ffffff;
+}
+.admin-books__delete-btn:hover {
+  background-color: #d21b53;
+}

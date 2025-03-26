@@ -1,0 +1,97 @@
+/*Estilos para el formulario de edición de perfil */
+/* Uso de la misma paleta de colores y fuente */
+
+.update-user {
+  background-color: #efebec;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-family: "Lora", serif;
+}
+
+.update-user__title {
+  font-size: 1.5rem;
+  color: #d21b53;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Vista previa del avatar */
+.update-user__avatar-preview {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.update-user__avatar-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #d21b53;
+}
+.update-user__form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.update-user__label {
+  font-size: 1rem;
+  color: #5d0b24; /* Dark Red */
+}
+
+.update-user__input,
+.update-user__textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #d21b53;
+  border-radius: 4px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.update-user__textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.update-user__buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.update-user__submit-btn {
+  background-color: #f774a8; /* Vibrant Pink */
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.update-user__submit-btn:hover {
+  background-color: #d21b53; /* Strong Red */
+}
+
+.update-user__cancel-btn {
+  background-color: #8d6b7a; /* Muted Purple */
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.update-user__cancel-btn:hover {
+  background-color: #5d0b24; /* Dark Red */
+}
+
+.update-user__message {
+  margin-top: 10px;
+  color: #d21b53;
+  text-align: center;
+  font-weight: bold;
+}

@@ -1,0 +1,68 @@
+/* src/styles/components/AddBookFormStyle.css */
+.add-book-form {
+  background-color: #efebec;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-family: "Lora", serif;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.add-book-form__title {
+  font-size: 1.8rem;
+  color: #d21b53;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.add-book-form__form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.add-book-form__label {
+  font-size: 1rem;
+  color: #5d0b24;
+}
+.add-book-form__input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #d21b53;
+  border-radius: 4px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+.add-book-form__btn {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #f774a8;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.add-book-form__cancel-btn {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #f774a8;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.add-book-form__btn:hover {
+  background-color: #d21b53;
+}
+
+.add-book-form__cancel-btn:hover {
+  background-color: #d21b53;
+}
+
+.add-book-form__message {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #d21b53;
+  text-align: center;
+}
