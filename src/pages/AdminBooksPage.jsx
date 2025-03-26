@@ -26,9 +26,9 @@ const AdminBooksPage = () => {
             </div>
             <div className="admin-books__info">
               <p className="admin-books__item-title">{book.titulo}</p>
-              <p className="admin-books__item-author">Autor: {book.autor}</p>
-              <p className="admin-books__item-genre">Género: {book.genero}</p>
-              <p className="admin-books__item-rating">Rating: {book.rating}</p>
+              <p className="admin-books__item-author"> {book.autor}</p>
+              <p className="admin-books__item-genre"> {book.genero}</p>
+              <p className="admin-books__item-rating"> {book.rating}</p>
             </div>
             <div className="admin-books__actions">
               <Link to={`edit/${book.id}`}>
