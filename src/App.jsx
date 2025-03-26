@@ -1,5 +1,15 @@
 import "./App.css";
+<<<<<<< HEAD
 import { Routes, Route, Router } from "react-router-dom";
+=======
+import { Routes, Route } from "react-router-dom";
+
+import { useLocation } from "react-router-dom";
+
+/*Rebe*/
+import { Router } from "react-router-dom";
+/*Rebe*/
+>>>>>>> origin/feature/Rebe/arreglos/Tarea16
 
 //Importación de componentes
 import { HomePage } from "./pages/HomePage";

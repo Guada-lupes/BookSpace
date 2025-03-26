@@ -1,4 +1,15 @@
+
 /*-------------Estilos del FOOTER---------------------*/
+/*Distribución de toda la página*/
+
+#root {
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  height: 100vh;
+}
+
+/*Distribución del footer:*/
 
 .footer {
     background-color: #333;
@@ -8,13 +19,17 @@
   }
   
   /* FOOTER: Estilo nav de socialmedia:*/
+
+  
   .footer__socialmedia-nav {
-    display: flex;
-    flex-direction: column; /* En la versión móvil, los enlaces se ordenan en vertical*/
+    display:flex;
+    flex-direction:column;
     gap: 10px; 
     margin-bottom: 20px;
   }
   
+
+
   /* FOOTER: Estilo links a socialmedia */
   .footer__socialmedia-link {
     color: #fff;
@@ -32,13 +47,13 @@
     flex-direction: column; /* En móvil, los enlaces legales se apilan verticalmente */
     gap: 10px; 
   }
-  /* FOOTER: Element: copyright */
+  /* FOOTER: Estilo: copyright */
   .footer__copyright {
     margin: 0;
     font-size: 12px;
   }
   
-  /* FOOTER: Element: legal-link */
+  /* FOOTER: Estilo: legal-link */
   .footer__legal-link {
     color: #fff;
     text-decoration: none;
@@ -51,7 +66,7 @@
   
   /* FOOTER: Media Queries: 
   Pantalla tablet y escritorio: 
-  Cambio la dirección de los elementos de enlace a redes sociales (ahora en línea horizontal(row)
+  Cambio la dirección de los elementos de enlace a redes sociales (ahora en línea horizontal(row))
   También cambiamos el tamaño de letra(más grande para tablets y escritorio)*/
   @media (min-width: 768px) {
     .footer__social-nav {
