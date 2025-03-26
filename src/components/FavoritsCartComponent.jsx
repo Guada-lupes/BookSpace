@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { FavoritesContext } from "../contexts/FavoritesContext";
 import { Link } from "react-router-dom";
 import "../styles/FavoritesCartComponentStyle.css";
+import { HeartComponent } from "./heartComponent";
 
 export const FavoritesCartComponent = () => {
   const { deleteFavorites, favorites } = useContext(FavoritesContext);
@@ -29,16 +30,14 @@ export const FavoritesCartComponent = () => {
 
             {/* Cambiar esto por un icono de corazon acompañado de eliminar de favoritos*/}
             <div className="favorite-item-buttons">
-            <Link to={`/${favorite.id}`}>
+            <Link to={`/home/${favorite.id}`}>
               <button className="details-button">Detalles</button>
             </Link>
-            <button className="quit-button" onClick={() => deleteFavorites(favorite.id)}>
-              Quitar
-            </button>
+            <div className="favorite-item-heart">
+            <HeartComponent book={favorite}/>
             </div>
             </div>
-
-
+            </div>
           </div>
         </>
       ))}

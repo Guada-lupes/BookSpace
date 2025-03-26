@@ -36,9 +36,15 @@
       text-align: center;
     }
   }
+
   .favorite-item-buttons {
-    align-self: anchor-center;
+    display: flex;
+    flex-direction: column;
     padding-bottom: 10px;
+    gap: 20px;
+        align-items: anchor-center;
+    .favorite-item-heart {
+    }
     .quit-button {
       padding: 5px;
     }
