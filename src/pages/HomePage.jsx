@@ -1,19 +1,23 @@
 import { ProductsComponent } from "../components/ProductsComponent";
-import {SearchComponent} from "../components/SearchComponent"
+import { SearchComponent } from "../components/SearchComponent";
 // import { DetailsProductComponent } from "../components/DetailsProductComponent";
 import { useParams, Outlet } from "react-router-dom";
 import { useContext, useState } from "react";
 import { BooksContext } from "../contexts/BooksContext";
 import Pagination from "../components/Pagination";
-
+import { BackButton } from "../components/BackButton";
 import "../styles/HomePageStyle.css";
 
 export const HomePage = () => {
   const { id } = useParams();
   const { books, searchWord } = useContext(BooksContext);
-
+  const url = "/home";
   //constante que filtra por palabra en cado de que haya búsqueda
-  const filteredBooks = searchWord ? books.filter(book=> book.titulo.toLowerCase().includes(searchWord.toLowerCase())) : books;
+  const filteredBooks = searchWord
+    ? books.filter((book) =>
+        book.titulo.toLowerCase().includes(searchWord.toLowerCase())
+      )
+    : books;
 
   // Estado para la paginación
   const [currentPage, setCurrentPage] = useState(1);
@@ -25,24 +29,29 @@ export const HomePage = () => {
   const currentBooks = filteredBooks.slice(indexOfFirstBook, indexOfLastBook);
 
   return (
-    <div className="home-page">
-      <SearchComponent/>
-      <h1 className="home-page__title">Tu comunidad literaria</h1>
-      <div className="home-page__content">
-        {id ? (
-          <Outlet />
-        ) : (
-          <>
-            <ProductsComponent books={currentBooks} />
-            <Pagination
-              totalBooks={books.length}
-              booksPerPage={booksPerPage}
-              setCurrentPage={setCurrentPage}
-              currentPage={currentPage}
-            />
-          </>
-        )}
+    <>
+      {id && <BackButton url={url} />}
+      <div className="home-page">
+        {!id && <SearchComponent />}
+        <h1 className="home-page__title">Tu comunidad literaria</h1>
+        <div className="home-page__content">
+          {id ? (
+            <>
+              <Outlet />
+            </>
+          ) : (
+            <>
+              <ProductsComponent books={currentBooks} />
+              <Pagination
+                totalBooks={books.length}
+                booksPerPage={booksPerPage}
+                setCurrentPage={setCurrentPage}
+                currentPage={currentPage}
+              />
+            </>
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
 };

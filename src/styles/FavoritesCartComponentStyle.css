@@ -1,0 +1,56 @@
+.favorites-container{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  padding: 15px;
+  background-color: #ffffff;
+  font-family: "Lora", serif;
+  
+  .favorite-item{
+    background-color: #efebec;
+    border: 1px solid #d21b53;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+  }
+  .favorite-item-img-container{
+    text-align: center;
+    margin-bottom: 10px;
+    .favorite-img{
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+  }
+  .favotire-item-options{
+
+  }
+  .favorite-item-info{
+    text-align: center;
+    margin-bottom: 10px;
+    .favorite-item-title{
+      font-size: 1.2rem;
+      color: #5d0b24;
+      margin: 5px 0;
+    }
+    .favorite-item-autor{
+      font-size: 1rem;
+      color: #8d6b7a;
+    }
+  }
+  .details-button{
+    display: block;
+    margin: 0 auto;
+    background-color: #f774a8;
+    color: #ffffff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    font-size: 1rem;
+  }
+  .favorite-item-heart{text-align: center;
+    margin-top: 5px;}
+}

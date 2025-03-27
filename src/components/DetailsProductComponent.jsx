@@ -1,10 +1,9 @@
 import { useContext } from "react";
 import { BooksContext } from "../contexts/BooksContext";
 import { useParams } from "react-router-dom";
-import { useNavigate } from "react-router-dom"; // Usamos useNavigate en lugar de useHistory
+import "../styles/DetailsProductComponentStyle.css";
 
 export function DetailsProductComponent() {
-  const navigate = useNavigate(); // Usamos useNavigate para redirigir al usuario
   //importamos useParams y extraemos el id de la url
   const id = useParams();
   //como id es un objeto, extraemos sólo su valor
@@ -34,23 +33,28 @@ export function DetailsProductComponent() {
   //renderizamos detalles
   return (
     <div className="book-details-container">
-      <div className="book-details-img-continaer">
-        <img
-          src={book.imagen}
-          alt={`imagen relacionada con el título del libro ${book.titulo}`}
-        />
-      </div>
+      <div className="book-details-card">
+        <div className="book-details-img-container">
+          <img className="book-img"
+            src={book.imagen}
+            alt={`imagen relacionada con el título del libro ${book.titulo}`}
+          />
+        </div>
 
-      <div className="book-details-autor">
-        <p className="book-details-titulo">{book.titulo}</p>
-        <p className="book-details-autor">{book.autor}</p>
-      </div>
+        <div className="book-details-autor">
+          <p className="book-details-titulo">{book.titulo}</p>
+          <p className="book-details-autor">{book.autor}</p>
+        </div>
+        <div className="book-varius">
+          <p>{`Género: ${book.genero}`}</p>
+          <p>{`ISBN: ${book.isbn}`}</p>
+          <p>{`Rating: ${book.rating}`}</p>
+        </div>
+<div className="book-sinopsis">
+<p>{`Sinopsis: ${book.sinopsis}`}</p>
+</div>
 
-      <p>{`Género: ${book.genero}`}</p>
-      <p>{`ISBN: ${book.isbn}`}</p>
-      <p>{`Rating: ${book.rating}`}</p>
-      <p>{`Sinopsis: ${book.sinopsis}`}</p>
-      <button onClick={() => navigate("/home")}>Atrás</button>
+      </div>
     </div>
   );
 }
