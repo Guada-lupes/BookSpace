@@ -20,10 +20,36 @@ const AddBookForm = ({ onClose }) => {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-
+  const validateForm = () => {
+    // Verificar que todos los campos estén completados (usamos trim para evitar espacios vacíos)
+    if (
+      !formData.titulo.trim() ||
+      !formData.autor.trim() ||
+      !formData.imagen.trim() ||
+      !formData.genero.trim() ||
+      !formData.rating.trim()
+    ) {
+      setMensaje("Por favor, completa todos los campos.");
+      return false;
+    }
+    // Verificar que rating sea un número
+    if (isNaN(formData.rating)) {
+      setMensaje("El campo Rating debe ser un número.");
+      return false;
+    }
+    // Verificar que la URL de la imagen es válida usando un regex simple
+    const urlRegex = /^(https?:\/\/)[^\s$.?#].[^\s]*$/;
+    if (!urlRegex.test(formData.imagen)) {
+      setMensaje("Por favor, ingresa una URL válida para la imagen.");
+      return false;
+    }
+    return true;
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("AddBookForm - Enviando:", formData);
+    if (!validateForm()) return;
+
+    console.log("AddBookForm - Enviando formulario:", formData);
     addBook(formData);
     setMensaje("¡Libro añadido con éxito!");
     setTimeout(() => {

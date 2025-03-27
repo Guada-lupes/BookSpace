@@ -6,6 +6,7 @@ import { AuthProvider } from "./contexts/AuthContext.jsx";
 import { BooksProvider } from "./contexts/BooksContext.jsx";
 import { FavoritesProvider } from "./contexts/FavoritesContext.jsx";
 import { AdminsBooksProvider } from "./contexts/AdminsBooksContext.jsx";
+import { UsersProvider } from "./contexts/UsersContext.jsx";
 
 createRoot(document.getElementById("root")).render(
   <AuthProvider>
@@ -13,7 +14,9 @@ createRoot(document.getElementById("root")).render(
       <FavoritesProvider>
         <AdminsBooksProvider>
           <BooksProvider>
-            <App />
+            <UsersProvider>
+              <App />
+            </UsersProvider>
           </BooksProvider>
         </AdminsBooksProvider>
       </FavoritesProvider>

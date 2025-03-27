@@ -5,7 +5,6 @@ import { HomePage } from "./pages/HomePage";
 import { FavoritesPage } from "./pages/FavoritesPage";
 import { DetailsProductComponent } from "./components/DetailsProductComponent";
 
-
 import DashboardPage from "./pages/DashboardPage";
 import HeaderComponent from "./components/HeaderComponent";
 import FooterComponent from "./components/FooterComponent";
@@ -19,6 +18,8 @@ import AdminPage from "./pages/AdminPage";
 import AdminBooksPage from "./pages/AdminBooksPage";
 import AddBookForm from "./components/AddBookForm";
 import EditBookForm from "./components/EditBookForm";
+import AdminUsersPage from "./pages/AdminUsersPage";
+import EditUserForm from "./components/EditUserForm";
 
 function App() {
   return (
@@ -50,6 +51,10 @@ function App() {
             <Route index element={<AdminBooksPage />} />
             <Route path="add" element={<AddBookForm />} />
             <Route path="edit/:id" element={<EditBookForm />} />
+          </Route>
+          <Route path="users">
+            <Route index element={<AdminUsersPage />} />
+            <Route path="edit/:id" element={<EditUserForm />} />
           </Route>
         </Route>
         <Route path="/favorites" element={<FavoritesPage />} />

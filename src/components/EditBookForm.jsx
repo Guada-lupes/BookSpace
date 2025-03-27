@@ -12,6 +12,7 @@ const EditBookForm = ({ onClose }) => {
   const bookToEdit = books.find((book) => book.id === Number(id));
   console.log("EditBookForm - bookToEdit:", bookToEdit);
 
+  // Estado para el formulario
   const [formData, setFormData] = useState({
     titulo: "",
     autor: "",
@@ -20,6 +21,7 @@ const EditBookForm = ({ onClose }) => {
     rating: "",
   });
 
+  // Pre-cargar los datos del libro (si se encuentra)
   useEffect(() => {
     if (bookToEdit) {
       setFormData({
@@ -32,25 +34,66 @@ const EditBookForm = ({ onClose }) => {
     }
   }, [bookToEdit, id]);
 
+  // Estado para mensajes de error o confirmación
   const [mensaje, setMensaje] = useState("");
 
+  // Función para manejar los cambios en los inputs
   const handleChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
+  // Función para validar el formulario
+  const validateForm = () => {
+    // Verifica que ningún campo requerido esté vacío (usando trim para evitar espacios)
+    if (
+      !formData.titulo.trim() ||
+      !formData.autor.trim() ||
+      !formData.imagen.trim() ||
+      !formData.genero.trim() ||
+      !formData.rating.toString().trim()
+    ) {
+      setMensaje("Por favor, complete todos los campos.");
+      return false;
+    }
+    // Verifica que el rating sea un número
+    if (isNaN(formData.rating)) {
+      setMensaje("El campo Rating debe ser un número.");
+      return false;
+    }
+    // Verificación básica de URL para la imagen (este regex es básico)
+    const urlRegex = /^(https?:\/\/)[^\s$.?#].[^\s]*$/;
+    if (!urlRegex.test(formData.imagen.trim())) {
+      setMensaje("Por favor, ingrese una URL válida para la imagen.");
+      return false;
+    }
+    return true;
+  };
+
+  // Función para manejar el envío del formulario
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("EditBookForm - handleSubmit, formData:", formData);
+    // Validamos el formulario
+    if (!validateForm()) return;
+
+    console.log("EditBookForm - Enviando formulario:", formData);
+    // Actualiza el libro en el context
     updateBook(Number(id), formData);
     setMensaje("¡Libro actualizado con éxito!");
     setTimeout(() => {
-      if (onClose) onClose();
-      else navigate("/admin/books");
+      if (onClose) {
+        onClose();
+      } else {
+        navigate("/admin/books");
+      }
     }, 1500);
   };
 
+  // Función para cancelar la edición y volver atrás
   const handleCancel = () => {
-    if (onClose) onClose();
-    else navigate("/admin/books");
+    if (onClose) {
+      onClose();
+    } else {
+      navigate("/admin/books");
+    }
   };
 
   return (
