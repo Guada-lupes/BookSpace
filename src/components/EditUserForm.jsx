@@ -2,6 +2,8 @@
 import React, { useState, useContext, useEffect } from "react";
 import { UsersContext } from "../contexts/UsersContext";
 import { useParams, useNavigate } from "react-router-dom";
+import "../styles/EditUserFormStyle.css";
+
 const EditUserForm = () => {
   const { id } = useParams();
   const { users, updateUserById } = useContext(UsersContext);

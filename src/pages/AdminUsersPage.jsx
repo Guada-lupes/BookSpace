@@ -2,6 +2,7 @@
 import React, { useContext } from "react";
 import { UsersContext } from "../contexts/UsersContext";
 import { Link } from "react-router-dom";
+import "../styles/AdminUsersPageStyle.css";
 
 const AdminUsersPage = () => {
   const { users, removeUser, toggleBlockUser } = useContext(UsersContext);
