@@ -6,7 +6,7 @@ import { Routes, Route } from "react-router-dom";
 import { HomePage } from "./pages/HomePage";
 import { FavoritesPage } from "./pages/FavoritesPage";
 import { DetailsProductComponent } from "./components/DetailsProductComponent";
-import LogoutButton from "./components/LogoutButton"; // Botón de cierre de sesión
+import LogoutButton from "./components/LogoutButton";
 /*Rebe       import FavoritesPage from "./pages/FavoritesPage";
 /*Rebe*/
 
@@ -22,9 +22,7 @@ import { ProductsComponent } from "./components/ProductsComponent";
 function App() {
   return (
     <>
-    {/*Rebe
-    <Router>
-    {/*Rebe*/}
+
     
       <HeaderComponent />
       <Routes>
@@ -32,24 +30,23 @@ function App() {
         {/* Página de registro */}
         <Route path="/" element={<LoginPage />} />{" "}
         {/* Página de inicio de sesión */}
-        <Route path="/logout" element={<LogoutButton />} /> {/*Botón de logout */}
-    
+        {/*<Route path="/logout" element={<LogoutButton />} /> {/*Botón de logout */}
+   
+       
+
         <Route path="/home" element={<HomePage />}>
           <Route path=":id" element={<DetailsProductComponent />} />
           {/* <Route path="/home/products" element={<ProductsComponent />} /> */}
         </Route>
-        <Route path="/dashboard" element={<DashboardPage />}>
-        </Route>
-    
+        <Route path="/dashboard" element={<DashboardPage />}></Route>
+        <Route path="logout" element={<LogoutButton />}></Route>
+        <Route path="/favorites" element={<FavoritesPage />} />
       </Routes>
       <FooterComponent />
     
-    {/*Rebe
-    </Router>
-    {/*Rebe*/}
+
 
     </>
   );
-}
-
+};
 export default App;

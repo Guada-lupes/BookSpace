@@ -1,19 +1,19 @@
-import React, { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 
 const LogoutButton = () => {
-    const { logout, currentUser } = useContext(AuthContext);
-    const navigate = useNavigate();
+  const { logout, currentUser } = useContext(AuthContext);
+  const navigate = useNavigate();
 
-    const handleLogout = () => {
-        logout(); // Llama a la función logout del contexto
-        navigate("/"); // Redirige al usuario a la página de login
-      };
+  useEffect(() => {
+    if (currentUser) {
+      logout(); // Cierra la sesión
+      navigate("/"); // Redirige al login (o a "/login" si lo prefieres)
+    }
+  }, [currentUser, logout, navigate]);
 
-      if (!currentUser) return null; // Si no hay usuario logueado, no muestra el botón
+  return null; // No muestra nada
+};
 
-      return (<button onClick={handleLogout}>Cerrar Sesión</button>)
-    };
-    
-    export default LogoutButton;
+export default LogoutButton;
