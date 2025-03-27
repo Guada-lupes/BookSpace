@@ -13,7 +13,7 @@
 /* Estilo para la imagen del libro */
 .admin-books__img {
   width: 100%;
-  max-height: 200px;
+  height: 200px;
   object-fit: cover;
   border-radius: 4px;
   border: 1px solid #d21b53; /* Borde opcional para acentuar */

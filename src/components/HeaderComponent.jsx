@@ -1,13 +1,13 @@
 import "../styles/HeaderStyle.css"; //Ruta de donde coge estilos el componente Header.
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom"; //useLocation nos permite obtener la ruta exacta de la página en la que nos encontramos. 
 
 
-const HeaderComponent = () => {
+const HeaderComponent = () => {    
   const location = useLocation(); /*useLocation nos permite obtener la ruta en la que nos encontramos actualmente.*/
-  console.log("Ruta actual:", location.pathname); /*Comprobración de la ruta en la que nos encontramos*/
-  const isLoginPage = location.pathname === "/";
+  console.log("Ruta actual:", location.pathname); /*Comprobación de la ruta en la que nos encontramos por consola del navegador*/
+  const isLoginPage = location.pathname === "/"; 
   
   const [isMenuOpen, setMenuOpen] = useState(false); /*useState nos permite manejar el estado de apertura del menu hamburguesa.*/
   
@@ -18,7 +18,13 @@ const HeaderComponent = () => {
  
   /*Cierre del menú hamburguesa tras hacer click en cualquiera de las posibles opciones (Mi perfil, mis favoritos y logout)*/
   const closeMenu = () => setMenuOpen (false);
- 
+
+  /*Cada vez que cambiemos de página se cerrrá automáticamente el menú hamburguesa, para que cuando cambiemos de página usando 
+  botones situados fuera del menú hamburguesa se cierre el menú automáticamente*/
+  useEffect (() => {
+    setMenuOpen (false);
+  }, [location.pathname]); 
+
   return (
     <header className="header" style={{ backgroundColor: "#d21b53" }}>
       <div className="header__logo-img">
