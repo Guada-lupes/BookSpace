@@ -1,8 +1,62 @@
 /*  mobile-first */
 
 .admin-books {
-  font-family: "Lora", serif;
-  padding: 16px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+/* Contenedor para la imagen del libro */
+.admin-books__img-container {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Estilo para la imagen del libro */
+.admin-books__img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid #d21b53; /* Borde opcional para acentuar */
+}
+
+/* Contenedor para la información completa del libro */
+.admin-books__info {
+  text-align: left;
+  font-size: 1rem;
+  color: #5d0b24;
+  margin-bottom: 10px;
+}
+
+/* Título del libro */
+.admin-books__item-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Información adicional: autor, género y rating */
+.admin-books__item-author,
+.admin-books__item-genre,
+.admin-books__item-rating {
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+
+/* Separación para cada dato */
+.admin-books__item-author::before {
+  content: "Autor: ";
+  font-weight: bold;
+}
+
+.admin-books__item-genre::before {
+  content: "Género: ";
+  font-weight: bold;
+}
+
+.admin-books__item-rating::before {
+  content: "Rating: ";
+  font-weight: bold;
 }
 
 .admin-books__title {
