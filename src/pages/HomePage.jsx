@@ -2,7 +2,7 @@ import { ProductsComponent } from "../components/ProductsComponent";
 import { SearchComponent } from "../components/SearchComponent";
 // import { DetailsProductComponent } from "../components/DetailsProductComponent";
 import { useParams, Outlet } from "react-router-dom";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { BooksContext } from "../contexts/BooksContext";
 import Pagination from "../components/Pagination";
 import { BackButton } from "../components/BackButton";
@@ -22,6 +22,11 @@ export const HomePage = () => {
   // Estado para la paginación
   const [currentPage, setCurrentPage] = useState(1);
   const booksPerPage = 10;
+
+    // Si cambia la búsqueda, volvemos a la página 1
+    useEffect(() => {
+      setCurrentPage(1);
+    }, [searchWord]);
 
   // Índices de los libros a mostrar en la página actual
   const indexOfLastBook = currentPage * booksPerPage;

@@ -5,6 +5,7 @@ import {
   registerUser,
 } from "../services/userService";
 
+// Creamos el contexto de autenticación
 export const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
@@ -19,7 +20,10 @@ export const AuthProvider = ({ children }) => {
     const user = checkUserCredentials(username, password);
     if (user) {
       setCurrentUser(user);
-      localStorage.setItem("currentUser", JSON.stringify(user));
+      localStorage.removeItem("currentUser");
+        setCurrentUser(user);
+
+      localStorage.setItem("currentUser", JSON.stringify(user))
       return true;
     }
     return false;
@@ -30,6 +34,8 @@ export const AuthProvider = ({ children }) => {
     setCurrentUser(null);
     localStorage.removeItem("currentUser");
   };
+  
+
 
   // Actualizar perfil: modifica los datos del usuario y actualiza en localStorage
   const updateUserProfile = (updateData) => {
