@@ -41,7 +41,7 @@ export function DetailsProductComponent() {
           />
         </div>
 
-        <div className="book-details-autor">
+        <div className="book-details-name">
           <p className="book-details-titulo">{book.titulo}</p>
           <p className="book-details-autor">{book.autor}</p>
         </div>

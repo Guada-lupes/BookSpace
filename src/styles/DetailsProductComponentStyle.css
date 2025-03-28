@@ -1,49 +1,85 @@
 .book-details-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 15px;
   padding: 15px;
   background-color: #ffffff;
   font-family: "Lora", serif;
+}
 
-  .book-details-card {
-    background-color: #efebec;
-    border: 1px solid #d21b53;
-    border-radius: 8px;
-    padding: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+.book-details-card {
+  background-color: #efebec;
+  border: 1px solid #d21b53;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.book-details-img-container {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.book-details-img-container .book-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.book-details-name {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.book-details-name .book-details-titulo {
+  font-size: 1.2rem;
+  color: #5d0b24;
+  margin: 5px 0;
+}
+
+.book-details-name .book-details-autor {
+  font-size: 1rem;
+  color: #8d6b7a;
+}
+
+.book-varius {
+  margin-bottom: 20px;
+}
+
+.book-varius p {
+  font-weight: bold;
+}
+
+.book-sinopsis {
+  margin: 5px;
+  text-align: justify;
+}
+
+/* MEDIA QUERIES */
+@media (min-width: 480px) {
+  .book-details-container {
+    max-width: 80%;
+    margin: auto;
   }
-  .book-details-img-container{
-    text-align: center;
-    margin-bottom: 10px;
-    .book-img{
-        max-width: 100%;
-        height: auto;
-        border-radius: 4px;
-    }
+}
+
+@media (min-width: 768px) {
+  .book-details-container {
+    max-width: 60%;
+    margin: auto;
   }
-  .book-details-autor{
-    text-align: center;
-    margin-bottom: 20px;
-    .book-details-titulo{
-        font-size: 1.2rem;
-    color: #5d0b24;
-    margin: 5px 0;
-    }
-    .book-details-autor{
-        font-size: 1rem;
-    color: #8d6b7a;
-    }
+
+  .book-details-name .book-details-titulo {
+    font-size: 2rem;
   }
-  .book-varius{
-    margin-bottom: 20px;
-    p{
-        font-weight: bold;
-    }
+
+  .book-details-name .book-details-autor {
+    font-size: 1.5rem;
   }
-  .book-sinopsis{
-    margin: 5px;
-        text-align: justify;
+
+  .book-varius {
+    font-size: 1.2rem;
+  }
+
+  .book-sinopsis {
+    font-size: 1.5rem;
   }
 }
