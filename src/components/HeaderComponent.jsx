@@ -5,10 +5,7 @@ import { Link, useLocation } from "react-router-dom"; //useLocation nos permite 
 
 
 const HeaderComponent = () => {    
-  const location = useLocation(); /*useLocation nos permite obtener la ruta en la que nos encontramos actualmente.*/
-  console.log("Ruta actual:", location.pathname); /*Comprobación de la ruta en la que nos encontramos por consola del navegador*/
-  const isLoginPage = location.pathname === "/"; 
-  
+
   const location = useLocation(); /*useLocation nos permite obtener la ruta en la que nos encontramos actualmente.*/
   console.log("Ruta actual:", location.pathname); /*Comprobración de la ruta en la que nos encontramos*/
   const isLoginPage = location.pathname === "/";
@@ -29,61 +26,53 @@ const HeaderComponent = () => {
   useEffect (() => {
     setMenuOpen (false);
   }, [location.pathname]); 
- 
-  /*Cierre del menú hamburguesa tras hacer click en cualquiera de las posibles opciones (Mi perfil, mis favoritos y logout)*/
-  const closeMenu = () => setMenuOpen (false);
+
  
   return (
     <header className="header" style={{ backgroundColor: "#d21b53" }}>
       <div className="header__logo-img">
-        <img
-          src="../src/assets/icons/logo.png"
-          alt="Logo"
-        />
+        <img src="../src/assets/icons/logo.png" alt="Logo" />
       </div>
-
+  
       <div className="header__title" style={{ fontFamily: "Roboto" }}>
         BOOKSPACE
       </div>
-
-      {/*Para ocultar el menú hamburguesa si estamos en la página de inicio (LoginPage): "/" */}
+  
+      {/* Para ocultar el menú hamburguesa si estamos en la página de inicio (LoginPage): "/" */}
       {!isLoginPage && (
-      {/*Para ocultar el menú hamburguesa si estamos en la página de inicio (LoginPage): "/" */}
-      {!isLoginPage && (
-      <div className="header__menu-icon" onClick={toggleMenu}>
-        <svg viewBox="0 0 100 80" width="100%" height="100%">
-          <rect width="100" height="20" fill="#333333"></rect>{" "}
-          {/*fill ="color" rellena rect del color elegido"*/}
-          <rect y="30" width="100" height="20" fill="#333333"></rect>
-          <rect y="60" width="100" height="20" fill="#333333"></rect>
-        </svg>
-      </div>
+        <div className="header__menu-icon" onClick={toggleMenu}>
+          <svg viewBox="0 0 100 80" width="100%" height="100%">
+            <rect width="100" height="20" fill="#333333"></rect>
+            {/* fill ="color" rellena rect del color elegido */}
+            <rect y="30" width="100" height="20" fill="#333333"></rect>
+            <rect y="60" width="100" height="20" fill="#333333"></rect>
+          </svg>
+        </div>
       )}
-      
-      )}
-      
+  
       {isMenuOpen && (
         <div className="header__menu-overlay">
           <ul className="header__menu-list">
-            <Link to="/dashboard" onClick={closeMenu}>
-            <Link to="/dashboard" onClick={closeMenu}>
-              <li>Mi Perfil</li>
-            </Link>
-
-            <Link to="/favorites" onClick={closeMenu}>
-            <Link to="/favorites" onClick={closeMenu}>
-              <li>Mis Favoritos</li>
-            </Link>
-
-            <Link to="/logout" onClick={closeMenu}>
-            <Link to="/logout" onClick={closeMenu}>
-              <li>Logout</li>
-            </Link>
+            <li>
+              <Link to="/dashboard" onClick={closeMenu}>
+                Mi Perfil
+              </Link>
+            </li>
+            <li>
+              <Link to="/favorites" onClick={closeMenu}>
+                Mis Favoritos
+              </Link>
+            </li>
+            <li>
+              <Link to="/logout" onClick={closeMenu}>
+                Logout
+              </Link>
+            </li>
           </ul>
         </div>
       )}
     </header>
   );
-};
+}  
 
 export default HeaderComponent;
