@@ -17,7 +17,7 @@
   height: 200px;
   object-fit: cover;
   border-radius: 4px;
-  border: 1px solid #d21b53; /* Borde opcional para acentuar */
+  border: 1px solid #d21b53;
 }
 
 /* Contenedor para la información completa del libro */
@@ -96,9 +96,21 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.admin-books__img-container {
+/* .admin-books__img-container {
+  /* Contenedor para la imagen del producto */
+.book-img-container {
   text-align: center;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+  height: 200px;
+  width: 300px;
+  overflow: hidden;
+}
+
+.book-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
 }
 
 .admin-books__img {
@@ -155,7 +167,8 @@
   background-color: #d21b53;
 }
 
-/* Desktop adjustments */
+/* Desktop */
+
 @media (min-width: 768px) {
   .admin-books__list {
     display: grid;
