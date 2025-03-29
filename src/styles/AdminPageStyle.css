@@ -67,6 +67,7 @@
     text-align: left;
     border-right: 1px solid #d21b53;
     border-bottom: none;
+    height: 650px;
   }
   .admin-sidebar__nav {
     flex-direction: column;
