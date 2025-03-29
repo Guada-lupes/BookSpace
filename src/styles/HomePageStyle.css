@@ -26,6 +26,11 @@ Paleta de Colores:
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 
 }
+.home-filter-option{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 
 /* Título principal de la HomePage */
 .home-page__title {

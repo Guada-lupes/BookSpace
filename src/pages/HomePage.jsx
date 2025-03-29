@@ -34,8 +34,10 @@ const filteredBooks = books.filter((book)=> (searchWord ? book.titulo.toLowerCas
     <>
       {id && <BackButton url={url} />}
       <div className="home-page">
+        <div className="home-filter-option">
         {!id && <SearchComponent />}
         {!id && <FilterComponent/>}
+        </div>
         <h1 className="home-page__title">Tu comunidad literaria</h1>
         <div className="home-page__content">
           {id ? (

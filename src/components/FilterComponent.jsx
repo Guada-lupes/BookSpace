@@ -19,7 +19,7 @@ setGender(value)
   return (
     <div className='form-container'>
         <form className='form-filter'>
-            <select value={gender} onChange={(e)=>selectHandle(e.target.value)} id="form-select" name="filters">
+            <select className='form-select' value={gender} onChange={(e)=>selectHandle(e.target.value)} id="form-select" name="filters">
                 <option value="" >Filtrar categoría</option>
                 <option value="realismo">Realismo mágico</option>
                 <option value="misterio">Misterio</option>

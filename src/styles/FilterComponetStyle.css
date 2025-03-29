@@ -5,6 +5,9 @@
     .form-container{
         display: block;
     }
+    .form-select{
+        height: 30px;
+    }
 }
 @media(min-width:768px){
     .form-container{
