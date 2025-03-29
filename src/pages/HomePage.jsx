@@ -47,12 +47,14 @@ export const HomePage = () => {
           ) : (
             <>
               <ProductsComponent books={currentBooks} />
+              {filteredBooks.length === books.length && (
               <Pagination
                 totalBooks={books.length}
                 booksPerPage={booksPerPage}
                 setCurrentPage={setCurrentPage}
                 currentPage={currentPage}
               />
+              )}
             </>
           )}
         </div>
