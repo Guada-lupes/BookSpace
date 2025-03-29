@@ -180,6 +180,7 @@
     text-align: left;
     border-right: 1px solid #d21b53;
     border-bottom: none;
-    height: auto;
+    background-color: #ffffff;
+    overflow-y: auto; /* Permite desplazamiento si el contenido es mayor */
   }
 }
