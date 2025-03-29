@@ -3,13 +3,25 @@ import "../styles/HeaderStyle.css"; //Ruta de donde coge estilos el componente H
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom"; //useLocation nos permite obtener la ruta exacta de la página en la que nos encontramos. 
 
+import { useNavigate } from "react-router-dom"; /*Redirección en todas las páginas al header*/
 
 const HeaderComponent = () => {    
 
   const location = useLocation(); /*useLocation nos permite obtener la ruta en la que nos encontramos actualmente.*/
   console.log("Ruta actual:", location.pathname); /*Comprobración de la ruta en la que nos encontramos*/
   const isLoginPage = location.pathname === "/";
-  
+
+  const navigate = useNavigate();
+  const handleHomeRedirect = (e) => {
+    if(location.path === "/") {
+    e.preventDefault();
+    return}
+     
+    e.preventdefault();
+    navigate("/home");
+    };
+
+
   const [isMenuOpen, setMenuOpen] = useState(false); /*useState nos permite manejar el estado de apertura del menu hamburguesa.*/
    /*useState nos permite manejar el estado de apertura del menu hamburguesa.*/
   
@@ -30,14 +42,21 @@ const HeaderComponent = () => {
  
   return (
     <header className="header" style={{ backgroundColor: "#d21b53" }}>
+      <a href="/home" onClick={handleHomeRedirect}
+      style={{
+        cursor: location.pathname === "/" ? "default" : "pointer", /*Mostramos el puntero del ratón "mano" sólo donde es posible usarlo para clicar(todas las páginas menos en la página de entrada (login ("/")). */
+        pointerEvents: location.pathname === "/" ? "none" : "auto" /* El puntero del ratón no actúa en la página de login ("/")*/
+      }}>
       <div className="header__logo-img">
         <img src="../src/assets/icons/logo.png" alt="Logo" />
       </div>
-  
+      </a>
       <div className="header__title" style={{ fontFamily: "Roboto" }}>
         BOOKSPACE
       </div>
   
+
+
       {/* Para ocultar el menú hamburguesa si estamos en la página de inicio (LoginPage): "/" */}
       {!isLoginPage && (
         <div className="header__menu-icon" onClick={toggleMenu}>
