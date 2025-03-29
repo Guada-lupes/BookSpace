@@ -82,7 +82,7 @@ const booksData = [
     titulo: "El amor en los tiempos del cólera",
     autor: "Gabriel García Márquez",
     editorial: "Oveja Negra",
-    genero: "Novela romántica",
+    genero: "Novela",
     isbn: "9789580600184",
     rating: 4.4,
     imagen:
@@ -134,7 +134,7 @@ const booksData = [
     titulo: "El túnel",
     autor: "Ernesto Sábato",
     editorial: "Sur",
-    genero: "Novela psicológica",
+    genero: "Novela",
     isbn: "9789500727871",
     rating: 4.2,
     imagen:
@@ -212,7 +212,7 @@ const booksData = [
     titulo: "La fiesta del chivo",
     autor: "Mario Vargas Llosa",
     editorial: "Alfaguara",
-    genero: "Novela histórica",
+    genero: "Novela",
     isbn: "9788420442145",
     rating: 4.4,
     imagen:
@@ -225,7 +225,7 @@ const booksData = [
     titulo: "El nombre de la rosa",
     autor: "Umberto Eco",
     editorial: "Lumen",
-    genero: "Novela histórica",
+    genero: "Novela",
     isbn: "9788426413136",
     rating: 4.5,
     imagen:
@@ -251,7 +251,7 @@ const booksData = [
     titulo: "El retrato de Dorian Gray",
     autor: "Oscar Wilde",
     editorial: "Lippincott's Monthly Magazine",
-    genero: "Novela gótica",
+    genero: "Novela",
     isbn: "9780141439570",
     rating: 4.6,
     imagen:
@@ -264,7 +264,7 @@ const booksData = [
     titulo: "El perfume",
     autor: "Patrick Süskind",
     editorial: "Diogenes Verlag",
-    genero: "Novela histórica",
+    genero: "Novela",
     isbn: "9788420412148",
     rating: 4.5,
     imagen:
@@ -355,7 +355,7 @@ const booksData = [
     titulo: "La insoportable levedad del ser",
     autor: "Milan Kundera",
     editorial: "Tusquets",
-    genero: "Novela filosófica",
+    genero: "Novela",
     isbn: "9788472234836",
     rating: 4.3,
     imagen:
@@ -381,7 +381,7 @@ const booksData = [
     titulo: "Crimen y castigo",
     autor: "Fiódor Dostoyevski",
     editorial: "The Russian Messenger",
-    genero: "Novela psicológica",
+    genero: "Novela",
     isbn: "9788420666443",
     rating: 4.7,
     imagen:
@@ -420,7 +420,7 @@ const booksData = [
     titulo: "Orgullo y prejuicio",
     autor: "Jane Austen",
     editorial: "T. Egerton, Whitehall",
-    genero: "Novela romántica",
+    genero: "Novela",
     isbn: "9780141439518",
     rating: 4.7,
     imagen:
@@ -433,7 +433,7 @@ const booksData = [
     titulo: "Rebelión en la granja",
     autor: "George Orwell",
     editorial: "Secker & Warburg",
-    genero: "Sátira política",
+    genero: "Satira política",
     isbn: "9780451526342",
     rating: 4.5,
     imagen:
@@ -446,7 +446,7 @@ const booksData = [
     titulo: "El alquimista",
     autor: "Paulo Coelho",
     editorial: "HarperCollins",
-    genero: "Novela filosófica",
+    genero: "Novela",
     isbn: "9780061122415",
     rating: 4.4,
     imagen:
@@ -472,7 +472,7 @@ const booksData = [
     titulo: "El león, la bruja y el armario",
     autor: "C.S. Lewis",
     editorial: "Geoffrey Bles",
-    genero: "Fantasía",
+    genero: "Fantasia",
     isbn: "9780064471046",
     rating: 4.7,
     imagen:
@@ -485,7 +485,7 @@ const booksData = [
     titulo: "El silmarillion",
     autor: "J.R.R. Tolkien",
     editorial: "George Allen & Unwin",
-    genero: "Fantasía",
+    genero: "Fantasia",
     isbn: "9788445071765",
     rating: 4.5,
     imagen:
@@ -498,7 +498,7 @@ const booksData = [
     titulo: "El mundo de Sofía",
     autor: "Jostein Gaarder",
     editorial: "Aschehoug",
-    genero: "Novela filosófica",
+    genero: "Novela",
     isbn: "9788478448152",
     rating: 4.4,
     imagen:
@@ -511,7 +511,7 @@ const booksData = [
     titulo: "Los pilares de la Tierra",
     autor: "Ken Follett",
     editorial: "Macmillan",
-    genero: "Novela histórica",
+    genero: "Novela",
     isbn: "9788401337218",
     rating: 4.6,
     imagen:
@@ -524,7 +524,7 @@ const booksData = [
     titulo: "El nombre del viento",
     autor: "Patrick Rothfuss",
     editorial: "DAW Books",
-    genero: "Fantasía",
+    genero: "Fantasia",
     isbn: "9788401337225",
     rating: 4.7,
     imagen:
@@ -550,7 +550,7 @@ const booksData = [
     titulo: "El psicoanalista",
     autor: "John Katzenbach",
     editorial: "Ediciones B",
-    genero: "Thriller psicológico",
+    genero: "Thriller",
     isbn: "9788401337249",
     rating: 4.3,
     imagen:
@@ -628,7 +628,7 @@ const booksData = [
     titulo: "La ladrona de libros",
     autor: "Markus Zusak",
     editorial: "Lumen",
-    genero: "Novela histórica",
+    genero: "Novela",
     isbn: "9788426413143",
     rating: 4.6,
     imagen:
@@ -654,7 +654,7 @@ const booksData = [
     titulo: "La catedral del mar",
     autor: "Ildefonso Falcones",
     editorial: "Grijalbo",
-    genero: "Novela histórica",
+    genero: "Novela",
     isbn: "9788425341549",
     rating: 4.6,
     imagen:
@@ -680,7 +680,7 @@ const booksData = [
     titulo: "Los renglones torcidos de Dios",
     autor: "Torcuato Luca de Tena",
     editorial: "Booket",
-    genero: "Novela psicológica",
+    genero: "Novela",
     isbn: "9788408057018",
     rating: 4.5,
     imagen:
@@ -693,7 +693,7 @@ const booksData = [
     titulo: "El tiempo entre costuras",
     autor: "María Dueñas",
     editorial: "Temas de Hoy",
-    genero: "Novela histórica",
+    genero: "Novela",
     isbn: "9788484609900",
     rating: 4.6,
     imagen:
@@ -758,7 +758,7 @@ const booksData = [
     titulo: "El corazón helado",
     autor: "Almudena Grandes",
     editorial: "Tusquets",
-    genero: "Novela histórica",
+    genero: "Novela",
     isbn: "9788483836370",
     rating: 4.5,
     imagen:

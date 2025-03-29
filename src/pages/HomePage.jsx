@@ -1,6 +1,6 @@
 import { ProductsComponent } from "../components/ProductsComponent";
 import { SearchComponent } from "../components/SearchComponent";
-// import { DetailsProductComponent } from "../components/DetailsProductComponent";
+import { FilterComponent } from "../components/FilterComponent";
 import { useParams, Outlet } from "react-router-dom";
 import { useContext, useState, useEffect } from "react";
 import { BooksContext } from "../contexts/BooksContext";
@@ -10,16 +10,13 @@ import "../styles/HomePageStyle.css";
 
 export const HomePage = () => {
   const { id } = useParams();
-  const { books, searchWord } = useContext(BooksContext);
+  const { books, searchWord, gender } = useContext(BooksContext);
   const url = "/home";
-  //constante que filtra por palabra en cado de que haya búsqueda
-  const filteredBooks = searchWord
-    ? books.filter((book) =>
-        book.titulo.toLowerCase().includes(searchWord.toLowerCase())
-      )
-    : books;
 
-  // Estado para la paginación
+const filteredBooks = books.filter((book)=> (searchWord ? book.titulo.toLowerCase().includes(searchWord.toLowerCase()) : true))
+.filter((book)=> (gender ? book.genero.toLowerCase().includes(gender.toLowerCase()) : true));
+
+// Estado para la paginación
   const [currentPage, setCurrentPage] = useState(1);
   const booksPerPage = 10;
 
@@ -38,6 +35,7 @@ export const HomePage = () => {
       {id && <BackButton url={url} />}
       <div className="home-page">
         {!id && <SearchComponent />}
+        {!id && <FilterComponent/>}
         <h1 className="home-page__title">Tu comunidad literaria</h1>
         <div className="home-page__content">
           {id ? (

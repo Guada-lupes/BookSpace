@@ -17,8 +17,10 @@ setBooks(getAllBooks())
 //guardará la palabra para filtrar la busqueda
 const [searchWord, setSearchWord] = useState("")
 
+const [gender, setGender] = useState("")
+
   return (
-    <BooksContext.Provider value={{books, searchWord, setSearchWord}}>
+    <BooksContext.Provider value={{books, searchWord, setSearchWord, gender, setGender}}>
         {children}
     </BooksContext.Provider>
   )

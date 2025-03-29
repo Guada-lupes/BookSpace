@@ -1,10 +1,15 @@
-import React, { useState } from 'react'
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
+import { useLocation } from 'react-router-dom';
 import { BooksContext } from '../contexts/BooksContext';
 import "../styles/SearchComponentStyle.css"
 
 export const SearchComponent = () => {
   const {searchWord, setSearchWord} = useContext(BooksContext)
+    const location = useLocation();
+
+  useEffect (() => {
+    setSearchWord ("");
+  }, [location.pathname]); 
 
     return (
     <div className='search-container'>
