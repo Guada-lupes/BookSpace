@@ -1,17 +1,15 @@
 .back-button-container{
     padding: 15px;
-    svg{
-        width: 25px;
-        height: 25px;
-    }
-
+}
+.back-button-svg{
+    width: 25px;
+    height: 25px;
 }
 @media(min-width: 480px){
     .back-button-container{
-    padding: 25px;
-    svg{
-        width: 40px;
-        height: 40px;
-    }
+}
+.back-button-svg{
+    width: 40px;
+    height: 40px;
 }
 }

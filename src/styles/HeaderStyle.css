@@ -25,10 +25,10 @@
           
   .header__menu-icon {
             cursor: pointer;
-            display: "flex";
-            align-items: "center";
-            height: "100%";
-            padding: "0 10px";
+            display: flex;
+            align-items: center;
+            height: 100%;
+            padding: 0 10px;
             }
 
   .header__menu-icon svg {
