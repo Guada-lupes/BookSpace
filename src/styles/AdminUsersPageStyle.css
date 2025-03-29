@@ -104,7 +104,7 @@
   background-color: #8d6b7a;
 }
 
-/* Desktop adjustments */
+/* Desktop */
 @media (min-width: 768px) {
   .admin-users__list {
     display: grid;
