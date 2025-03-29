@@ -1,10 +1,6 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 
-/*Rebe*/
-import { Router } from "react-router-dom";
-/*Rebe*/
-
 //Importación de componentes
 import { HomePage } from "./pages/HomePage";
 import { FavoritesPage } from "./pages/FavoritesPage";
@@ -12,7 +8,6 @@ import { DetailsProductComponent } from "./components/DetailsProductComponent";
 import LogoutButton from "./components/LogoutButton";
 /*Rebe       import FavoritesPage from "./pages/FavoritesPage";
 /*Rebe*/
-
 
 import DashboardPage from "./pages/DashboardPage";
 import HeaderComponent from "./components/HeaderComponent";
@@ -39,9 +34,6 @@ function App() {
         <Route path="/" element={<LoginPage />} />{" "}
         {/* Página de inicio de sesión */}
         {/*<Route path="/logout" element={<LogoutButton />} /> {/*Botón de logout */}
-   
-       
-
         <Route path="/home" element={<HomePage />}>
           <Route path=":id" element={<DetailsProductComponent />} />
           {/* <Route path="/home/products" element={<ProductsComponent />} /> */}
@@ -66,11 +58,10 @@ function App() {
         <Route path="/favorites" element={<FavoritesPage />} />
       </Routes>
       <FooterComponent />
-    {/*Rebe
+      {/*Rebe
     </Router>
     {/*Rebe*/}
-
     </>
   );
-};
+}
 export default App;
