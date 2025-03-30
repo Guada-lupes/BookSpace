@@ -56,15 +56,17 @@
 /* MEDIA QUERIES */
 @media (min-width: 480px) {
   .book-details-container {
-    max-width: 80%;
+    max-width: 500px;
     margin: auto;
+    width: 80%;
   }
 }
 
 @media (min-width: 768px) {
   .book-details-container {
-    max-width: 50%;
     margin: auto;
+    width: 80%;
+    max-width: 800px;
   }
 
   .book-details-name .book-details-titulo {

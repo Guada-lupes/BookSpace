@@ -6,11 +6,13 @@ import { BooksProvider } from "./contexts/BooksContext.jsx";
 import { FavoritesProvider } from "./contexts/FavoritesContext.jsx";
 import { AdminsBooksProvider } from "./contexts/AdminsBooksContext.jsx";
 import { UsersProvider } from "./contexts/UsersContext.jsx";
+import { ScrollToTop } from "./components/ScrollToTop.jsx";
 import "./index.css";
 
 createRoot(document.getElementById("root")).render(
   <AuthProvider>
     <BrowserRouter>
+    <ScrollToTop/>
       <FavoritesProvider>
         <AdminsBooksProvider>
           <BooksProvider>

@@ -1,11 +1,13 @@
 import React, { useContext } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import { AuthContext } from "../contexts/AuthContext";
+import { BackButton } from "../components/BackButton";
 import "../styles/DashboardStyle.css";
 
 const DashboardPage = () => {
   const { currentUser } = useContext(AuthContext);
   const navigate = useNavigate();
+  const url = "/home";
 
   if (!currentUser) {
     return (
@@ -16,7 +18,9 @@ const DashboardPage = () => {
   }
 
   return (
-    <div className="dashboard">
+    <>
+    <BackButton url={url}/>
+        <div className="dashboard">
       <header className="dashboard__header">
         <h2 className="dashboard__title">
           ¡Bienvenido, {currentUser.fullName}!
@@ -32,6 +36,7 @@ const DashboardPage = () => {
         <Outlet />
       </div>
     </div>
+    </>
   );
 };
 

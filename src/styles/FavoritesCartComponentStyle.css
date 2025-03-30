@@ -15,6 +15,9 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
 }
+.favorite-item:hover {
+  transform: scale(1.02);
+}
 
 .favorite-item-img-container {
   text-align: center;
@@ -68,7 +71,10 @@
   transition: background-color 0.3s, transform 0.2s;
   font-size: 1rem;
 }
-
+.details-button:hover {
+  background-color: #d21b53;
+  transform: scale(1.05);
+}
 .favorite-item-heart {
   text-align: center;
   margin-top: 5px;

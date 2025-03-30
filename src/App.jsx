@@ -6,8 +6,6 @@ import { HomePage } from "./pages/HomePage";
 import { FavoritesPage } from "./pages/FavoritesPage";
 import { DetailsProductComponent } from "./components/DetailsProductComponent";
 import LogoutButton from "./components/LogoutButton";
-/*Rebe       import FavoritesPage from "./pages/FavoritesPage";
-/*Rebe*/
 
 import DashboardPage from "./pages/DashboardPage";
 import HeaderComponent from "./components/HeaderComponent";

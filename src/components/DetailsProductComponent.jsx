@@ -30,6 +30,7 @@ export function DetailsProductComponent() {
       </div>
     );
   }
+
   //renderizamos detalles
   return (
     <div className="book-details-container">
