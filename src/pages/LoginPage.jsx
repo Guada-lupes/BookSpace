@@ -50,10 +50,10 @@ const LoginPage = () => {
       <p>
         ¿Has olvidado tu contraseña?{" "}
         <span
-        style={{ color: "blue", cursor: "pointer", textDecoration: "underline" }}
+        className="loginmodal"
         onClick={handleForgotPassword}
         >
-          Clica aquí
+          Pincha aquí
         </span>
       </p>
 
