@@ -23,12 +23,12 @@
     background-color: #f8f9fa;
   }
   
-  h2 {
+  .login-h2 {
     color: #333;
     margin-bottom: 20px;
   }
   
-  form {
+  .login-form {
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -43,7 +43,7 @@
     font-size: 16px;
   }
   
-  button {
+  .login-button {
     padding: 12px;
     background-color: #f774a8;
     color: white;
@@ -53,21 +53,21 @@
     font-size: 16px;
   }
   
-  button:hover {
+  .login-button:hover {
     background-color: #f774a8;
   }
   
-  p {
+  .login-parrafo {
     margin-top: 10px;
     font-size: 14px;
   }
   
-  p a {
+  .login-parrafo a {
     color: #5d0b24;
     text-decoration: none;
   }
   
-  p a:hover {
+  .login-parrafo a:hover {
     text-decoration: underline;
   }
   

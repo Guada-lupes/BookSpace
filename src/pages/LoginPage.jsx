@@ -27,8 +27,8 @@ const LoginPage = () => {
 
   return (
     <div className="login-page">
-      <h2>Iniciar Sesión</h2>
-      <form onSubmit={handleSubmit}>
+      <h2 className="login-h2">Iniciar Sesión</h2>
+      <form className="login-form" onSubmit={handleSubmit}>
         <input className="login-input"
           type="text"
           placeholder="Nombre de usuario"
@@ -41,13 +41,13 @@ const LoginPage = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)} // Actualiza el estado con el input de la contraseña
         />
-        <button type="submit">Iniciar Sesión</button> {/* Botón para enviar el formulario */}
+        <button className="login-button" type="submit">Iniciar Sesión</button> {/* Botón para enviar el formulario */}
       </form>
       {/* Enlace para redirigir a la página de registro */}
-      <p>
+      <p className="login-parrafo">
         ¿Aún no te has registrado? <Link to="/register">Regístrate aquí</Link>
       </p>
-      <p>
+      <p className="login-parrafo">
         ¿Has olvidado tu contraseña?{" "}
         <span
         className="loginmodal"

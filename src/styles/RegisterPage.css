@@ -9,7 +9,7 @@
     background-color: #f8f9fa;
   }
   
-  h2 {
+  .register-h2 {
     color: #0a0909;
     margin-bottom: 20px;
   }
@@ -34,7 +34,7 @@
     font-size: 16px;
   }
   
-  button {
+  .register-button {
     padding: 12px;
     background-color: #0e060b;
     color: #f774a8;
@@ -44,7 +44,7 @@
     font-size: 16px;
   }
   
-  button:disabled {
+  .register-button:disabled {
     background-color: #ccc;
     cursor: not-allowed;
   }

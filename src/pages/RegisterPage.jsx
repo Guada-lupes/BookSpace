@@ -57,7 +57,7 @@ const RegisterPage = () => {
 
   return (
     <div>
-      <h2>Registrar Usuario</h2>
+      <h2 className="register-h2">Registrar Usuario</h2>
       {error && <p className="error">{error}</p>}
       <form className="register-form" onSubmit={handleSubmit}>
         <input className="registerplaceholder"
@@ -90,14 +90,14 @@ const RegisterPage = () => {
         />
         {/* Mostramos el error de correo si es necesario */}
         {emailError && <p className="error">{emailError}</p>}
-        <button type="submit" disabled={!!emailError}>Registrar</button>
+        <button className="register-button" type="submit" disabled={!!emailError}>Registrar</button>
       </form>
       {/* Modal para mostrar el mensaje de éxito */}
       {showModal && (
         <div className="modal">
           <div className="modal-content">
             <h3>Tú registro se ha completado con éxito</h3>
-            <button onClick={closeModal}>Cerrar</button>
+            <button className="register-button" onClick={closeModal}>Cerrar</button>
           </div>
         </div>
       )}
