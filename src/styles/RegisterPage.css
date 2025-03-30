@@ -1,19 +1,5 @@
-.login-page {
-    width: 350px;
-    margin: 20px auto;
-    background-color: #efebec;
-    font-family: "Roboto", sans-serif;
-    color: #8d6b7a;
-}
-
-.login-page p {
-    color: #8d6b7a;
-    background-color: #efebec;
-    font-family: "Roboto", sans-serif;
-}
-
 /* Estilos base (Mobile First) */
-.login-page {
+.register-page {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -24,19 +10,24 @@
   }
   
   h2 {
-    color: #333;
+    color: #0a0909;
     margin-bottom: 20px;
   }
   
-  form {
+  .register-form {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
     gap: 12px;
     width: 100%;
     max-width: 350px;
   }
   
-  input {
+  .registerplaceholder {
+    display: block;
+    width: 100%;
+    justify-content: space-between;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -45,39 +36,23 @@
   
   button {
     padding: 12px;
-    background-color: #f774a8;
-    color: white;
+    background-color: #0e060b;
+    color: #f774a8;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
   }
   
-  button:hover {
-    background-color: #f774a8;
+  button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
   }
   
-  p {
-    margin-top: 10px;
+  .error {
+    color: red;
     font-size: 14px;
-  }
-  
-  p a {
-    color: #5d0b24;
-    text-decoration: none;
-  }
-  
-  p a:hover {
-    text-decoration: underline;
-  }
-  
-  .loginmodal {
-    color: #5d0b24;
-    cursor: pointer;
-  }
-  
-  .loginmodal:hover {
-    text-decoration: underline;
+    text-align: center;
   }
   
   /* Modal */
@@ -87,7 +62,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.928);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -103,7 +78,7 @@
   
   .modal button {
     margin-top: 15px;
-    background-color: #5d0b24;
+    background-color: #f774a8;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -112,19 +87,19 @@
   }
   
   .modal button:hover {
-    background-color: #5d0b24;
+    background-color: #f774a8;
   }
   
   /* Media Queries para pantallas más grandes */
   @media (min-width: 768px) {
-    .login-page {
+    .register-page {
       max-width: 400px;
       margin: auto;
     }
   }
   
   @media (min-width: 1024px) {
-    .login-page {
+    .register-page {
       max-width: 500px;
     }
   }
