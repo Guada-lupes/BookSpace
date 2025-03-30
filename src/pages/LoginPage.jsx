@@ -29,13 +29,13 @@ const LoginPage = () => {
     <div className="login-page">
       <h2>Iniciar Sesión</h2>
       <form onSubmit={handleSubmit}>
-        <input
+        <input className="login-input"
           type="text"
           placeholder="Nombre de usuario"
           value={username}
           onChange={(e) => setUsername(e.target.value)} // Actualiza el estado con el input del usuario
         />
-        <input
+        <input className="login-input"
           type="password"
           placeholder="Contraseña"
           value={password}
