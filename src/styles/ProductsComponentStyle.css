@@ -1,29 +1,12 @@
-/* 
-Paleta de Colores:
-   Blanco: #ffffff
-   Light Background: #efebec
-   Vibrant Pink: #f774a8
-   Strong Red: #d21b53
-   Dark Red: #5d0b24
-   Muted Purple: #8d6b7a
-*/
-
-/* Contenedor principal */
+/* Mobile-first: 1 columna */
 .library-list {
   display: grid;
-  grid-template-columns: 1fr; /* Una columna en móviles */
+  grid-template-columns: 1fr;
   gap: 15px;
   padding: 15px;
+  width: 100%;
+  box-sizing: border-box;
   background-color: #ffffff;
-  font-family: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";
-}
-
-/* Adaptación responsiva en Desktop*/
-@media (min-width: 768px) {
-  .library-list {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-  }
 }
 
 /* Tarjeta de producto */
@@ -34,7 +17,9 @@ Paleta de Colores:
   padding: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
+  text-align: center;
 }
+
 .library-item:hover {
   transform: scale(1.02);
 }
@@ -43,15 +28,15 @@ Paleta de Colores:
 .book-img-container {
   text-align: center;
   margin-bottom: 10px;
-  height:200px;
-  width:300px;
+  height: 200px;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 .book-img {
   width: 100%;
   height: 100%;
-  object-fit:cover;
+  object-fit: cover;
   border-radius: 4px;
 }
 
@@ -63,16 +48,16 @@ Paleta de Colores:
 
 .book-title {
   font-size: 1.2rem;
-  color: #5d0b24; /* Dark Red para contraste */
-  margin: 5px 0;
+  color: #5d0b24;
+  margin-bottom: 5px;
 }
 
 .book-autor {
   font-size: 1rem;
-  color: #8d6b7a; /* Muted Purple */
+  color: #8d6b7a;
 }
 
-/* Contenedor para género y rating */
+/* Contenedores para género y rating */
 .book-genero-container,
 .book-rating-container {
   text-align: center;
@@ -85,7 +70,7 @@ Paleta de Colores:
   color: #d21b53;
 }
 
-/* Botón "Más info"*/
+/* Botón "Más info" */
 .book-masinfo-buttton {
   display: block;
   margin: 0 auto;
@@ -104,7 +89,7 @@ Paleta de Colores:
   transform: scale(1.05);
 }
 
-/* Contenedor y estilos para el botón de favoritos */
+/* Botón de favoritos */
 .book-favoritos-container {
   text-align: center;
   margin-top: 5px;
@@ -120,9 +105,30 @@ Paleta de Colores:
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.2s;
+  font-size: 1rem;
 }
 
 .book-favoritos-container button:hover {
   background-color: #d21b53;
   transform: scale(1.05);
+}
+
+/* Media Queries */
+
+/* Tablet: a partir de 768px, 2 columnas */
+@media (min-width: 768px) {
+  .library-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+  }
+}
+
+/* Desktop: a partir de 1024px, 3 columnas */
+@media (min-width: 1024px) {
+  .library-list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    padding: 25px;
+  }
 }
