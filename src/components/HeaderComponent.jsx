@@ -8,18 +8,17 @@ import { useNavigate } from "react-router-dom"; /*Redirección en todas las pág
 const HeaderComponent = () => {    
 
   const location = useLocation(); /*useLocation nos permite obtener la ruta en la que nos encontramos actualmente.*/
-  console.log("Ruta actual:", location.pathname); /*Comprobración de la ruta en la que nos encontramos*/
-  const isLoginPage = location.pathname === "/";
+  console.log("Ruta actual:", location.pathname); /*Comprobación de la ruta en la que nos encontramos*/
+  const isLoginPageOrRegisterPage = location.pathname === "/" || location.pathname === "/register"; /* Si estoy localizada en la página de Login o en la de Register.*/
 
   const navigate = useNavigate();
   const handleHomeRedirect = (e) => {
-    if(location.path === "/") {
+    if (location.path === "/" || location.path === "/register") {
     e.preventDefault();
-    return}
-     
-    e.preventdefault();
-    navigate("/home");
-    };
+    } else { 
+    navigate ("/home");
+    }
+  };
 
 
   const [isMenuOpen, setMenuOpen] = useState(false); /*useState nos permite manejar el estado de apertura del menu hamburguesa.*/
@@ -44,8 +43,8 @@ const HeaderComponent = () => {
     <header className="header" style={{ backgroundColor: "#d21b53" }}>
       <a href="/home" onClick={handleHomeRedirect}
       style={{
-        cursor: location.pathname === "/" ? "default" : "pointer", /*Mostramos el puntero del ratón "mano" sólo donde es posible usarlo para clicar(todas las páginas menos en la página de entrada (login ("/")). */
-        pointerEvents: location.pathname === "/" ? "none" : "auto" /* El puntero del ratón no actúa en la página de login ("/")*/
+        cursor: isLoginPageOrRegisterPage ? "default" : "pointer", /*Mostramos el puntero del ratón "mano" sólo donde es posible usarlo para clicar(todas las páginas menos en la página de entrada (login ("/") y en la de registro ("/register")). */
+        pointerEvents: isLoginPageOrRegisterPage ? "none" : "auto" /* El puntero del ratón no actúa en la página de login ("/") ni en la de registro ("/register")*/
       }}>
       <div className="header__logo-img">
         <img src="../src/assets/icons/logo.png" alt="Logo" />
@@ -55,10 +54,8 @@ const HeaderComponent = () => {
         BOOKSPACE
       </div>
   
-
-
       {/* Para ocultar el menú hamburguesa si estamos en la página de inicio (LoginPage): "/" */}
-      {!isLoginPage && (
+      {!isLoginPageOrRegisterPage && (
         <div className="header__menu-icon" onClick={toggleMenu}>
           <svg viewBox="0 0 100 80" width="100%" height="100%">
             <rect width="100" height="20" fill="#333333"></rect>
