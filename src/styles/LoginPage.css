@@ -1,130 +1,136 @@
-.login-page {
-    width: 350px;
-    margin: 20px auto;
-    background-color: #efebec;
-    font-family: "Roboto", sans-serif;
-    color: #8d6b7a;
-}
-
-.login-page p {
-    color: #8d6b7a;
-    background-color: #efebec;
-    font-family: "Roboto", sans-serif;
-}
-
 /* Estilos base (Mobile First) */
-.login-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    padding: 20px;
-    background-color: #f8f9fa;
-  }
-  
-  h2 {
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    width: 100%;
-    max-width: 350px;
-  }
-  
-  input {
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-  }
-  
-  button {
-    padding: 12px;
-    background-color: #f774a8;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  button:hover {
-    background-color: #f774a8;
-  }
-  
-  p {
-    margin-top: 10px;
-    font-size: 14px;
-  }
-  
-  p a {
-    color: #5d0b24;
-    text-decoration: none;
-  }
-  
-  p a:hover {
-    text-decoration: underline;
-  }
-  
-  .loginmodal {
-    color: #5d0b24;
-    cursor: pointer;
-  }
-  
-  .loginmodal:hover {
-    text-decoration: underline;
-  }
-  
-  /* Modal */
-  .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .modal-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  .modal button {
-    margin-top: 15px;
-    background-color: #5d0b24;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  
-  .modal button:hover {
-    background-color: #5d0b24;
-  }
-  
-  /* Media Queries para pantallas más grandes */
-  @media (min-width: 768px) {
-    .login-page {
+.login-container {
+  width: 100%;
+  max-width: 350px;
+  margin: 20px auto; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+.login-title {
+  color: #5d0b24;
+  margin-bottom: 24px;
+  font-size: 40px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.login-input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.login-button {
+  padding: 12px;
+  background-color: #faa5a5;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.login-button:hover {
+  background-color: #5d0b24;
+}
+
+.login-text {
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.login-link {
+  color: #5d0b24;
+  text-decoration: none;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}
+
+.login-forgot {
+  color: #5d0b24;
+  cursor: pointer;
+}
+
+.login-forgot:hover {
+  text-decoration: underline;
+}
+
+.modal {
+  position: fixed;
+  top: 0; 
+  left: 0; 
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: rgb(208, 202, 205);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 90%;
+}
+
+.modal-text {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.modal-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.modal-button {
+  margin-top: 15px;
+  background-color:#8d6b7a;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.modal-button:hover {
+  background-color: #3d0818;
+}
+
+/* Media Queries para pantallas más grandes */
+@media (min-width: 768px) {
+  .login-container {
       max-width: 400px;
       margin: auto;
-    }
   }
-  
-  @media (min-width: 1024px) {
-    .login-page {
+}
+
+@media (min-width: 1024px) {
+  .login-container {
       max-width: 500px;
-    }
   }
+}

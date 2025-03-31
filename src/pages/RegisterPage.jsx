@@ -56,32 +56,32 @@ const RegisterPage = () => {
 
 
   return (
-    <div>
-      <h2>Registrar Usuario</h2>
+    <div className="register-page">
+      <h2 className="register-title">Registro</h2>
       {error && <p className="error">{error}</p>}
       <form className="register-form" onSubmit={handleSubmit}>
-        <input className="registerplaceholder"
+        <input className="register-input"
           type="text"
           placeholder="Nombre de usuario"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           required
         />
-        <input className="registerplaceholder"
+        <input className="register-input"
           type="password"
           placeholder="Contraseña"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <input className="registerplaceholder"
+        <input className="register-input"
           type="text"
           placeholder="Nombre completo"
           value={fullName}
           onChange={(e) => setFullName(e.target.value)}
           required
         />
-         <input className="registerplaceholder"
+         <input className="register-input"
           type="email"
           placeholder="Correo electrónico"
           value={email}
@@ -90,14 +90,14 @@ const RegisterPage = () => {
         />
         {/* Mostramos el error de correo si es necesario */}
         {emailError && <p className="error">{emailError}</p>}
-        <button type="submit" disabled={!!emailError}>Registrar</button>
+        <button className="register-btn" type="submit" disabled={!!emailError}>Registrarse</button>
       </form>
       {/* Modal para mostrar el mensaje de éxito */}
       {showModal && (
-        <div className="modal">
-          <div className="modal-content">
-            <h3>Tú registro se ha completado con éxito</h3>
-            <button onClick={closeModal}>Cerrar</button>
+        <div className="modal-register">
+          <div className="modal-register-content">
+            <h3>¡Felicidades!, tu registro se ha completado con éxito</h3>
+            <button className="modal-close-button" onClick={closeModal}>Cerrar</button>
           </div>
         </div>
       )}

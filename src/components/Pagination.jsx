@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import "../styles/Pagination.css"
 
 const Pagination = ({ totalBooks, booksPerPage, setCurrentPage, currentPage }) => {
   const totalPages = Math.ceil(totalBooks / booksPerPage);
@@ -6,6 +7,8 @@ const Pagination = ({ totalBooks, booksPerPage, setCurrentPage, currentPage }) =
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [currentPage]);
+
+
 
   const handlePageClick = (page) => {
     if (page >= 1 && page <= totalPages && page !== currentPage) {
@@ -64,7 +67,7 @@ const Pagination = ({ totalBooks, booksPerPage, setCurrentPage, currentPage }) =
 
   return (
     <div className="pagination">
-      <button
+      <button className="pagination-button"
         onClick={() => handlePageClick(currentPage - 1)}
         disabled={currentPage === 1}
       >
@@ -73,7 +76,7 @@ const Pagination = ({ totalBooks, booksPerPage, setCurrentPage, currentPage }) =
 
       {renderPageButtons()}
 
-      <button
+      <button className="pagination-button"
         onClick={() => handlePageClick(currentPage + 1)}
         disabled={currentPage === totalPages}
       >
