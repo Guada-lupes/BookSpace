@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { AuthContext } from "../contexts/AuthContext";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../styles/RegisterPage.css"; // Importamos el archivo de estilos
 
 const RegisterPage = () => {
@@ -92,6 +92,11 @@ const RegisterPage = () => {
         {emailError && <p className="error">{emailError}</p>}
         <button className="register-btn" type="submit" disabled={!!emailError}>Registrarse</button>
       </form>
+      {/* Volver a login */}
+      <p className="login-text">
+                ¿Ya te has registrado? <Link to={"/"} className="login-forgot">Pincha aquí</Link>
+            </p>
+
       {/* Modal para mostrar el mensaje de éxito */}
       {showModal && (
         <div className="modal-register">

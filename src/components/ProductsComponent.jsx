@@ -37,7 +37,7 @@ export const ProductsComponent = ({ books }) => {
           </div>
 
           <Link to={`/home/${book.id}`}>
-            <button className="book-masinfo-buttton">Más info</button>
+            <button className="book-masinfo-buttton">Detalles</button>
           </Link>
           <div className="book-favoritos-container">
             <HeartComponent book={book}/>

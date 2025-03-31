@@ -29,7 +29,7 @@ setGender(value)
                 <option value="novela">Novela</option>
                 <option value="ensayo">Ensayo</option>
                 <option value="infantil">Literatura infantil</option>
-                <option value="suspence">Suspense</option>
+                <option value="suspense">Suspense</option>
                 <option value="fantasia">Fantasía</option>
                 <option value="satira">Sátira política</option>
                 <option value="terror">Terror</option>
