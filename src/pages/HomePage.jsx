@@ -47,9 +47,9 @@ const filteredBooks = books.filter((book)=> (searchWord ? book.titulo.toLowerCas
           ) : (
             <>
               <ProductsComponent books={currentBooks} />
-              {filteredBooks.length === books.length && (
+              {filteredBooks.length > booksPerPage && (
               <Pagination
-                totalBooks={books.length}
+              totalBooks={filteredBooks.length}
                 booksPerPage={booksPerPage}
                 setCurrentPage={setCurrentPage}
                 currentPage={currentPage}
