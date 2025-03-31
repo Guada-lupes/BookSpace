@@ -45,6 +45,7 @@
   .footer__legal-info {
     display: flex;
     flex-direction: column; /* En móvil, los enlaces legales se apilan verticalmente */
+    align-items: center; 
     gap: 10px; 
   }
   /* FOOTER: Estilo: copyright */
@@ -60,9 +61,7 @@
     font-size: 12px;
   }
   
-  .footer__legal-link:hover {
-    text-decoration: underline;
-  }
+  
   
   /* FOOTER: Media Queries: 
   Pantalla tablet y escritorio: 
@@ -72,6 +71,8 @@
     .footer__social-nav {
       flex-direction: row; 
       justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
     }
   
     .footer__legal-info {
@@ -87,6 +88,10 @@
     .footer__copyright,
     .footer__legal-link {
       font-size: 14px; 
+      margin:0;
+    }
+    .footer__copyright {
+      margin-left: auto;
     }
   }
   
