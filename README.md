@@ -137,10 +137,10 @@ This project is licensed under the **MIT License**.
 For details, see the [LICENSE]  (https://github.com/Guada-lupes/Proyecto-Final--Grupo-1?tab=MIT-1-ov-file) file.
 
 ## Authors
-- Guadalupe Marándola Ávila 
-- Sara del Pozo González 
-- Sara Martín Ferrara
-- Rebeca Mora González
+- Guadalupe Marándola Ávila (https://github.com/Guada-lupes)
+- Sara del Pozo González (https://github.com/Sppgg)
+- Sara Martín Ferrara (https://github.com/SaraM901)
+- Rebeca Mora González (https://github.com/Rebecatech)
 
 ## More information:
 ### Project Directory Structure:
