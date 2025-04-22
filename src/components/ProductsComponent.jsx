@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { FavoritesContext } from "../contexts/FavoritesContext";
 import { Link } from "react-router-dom";
-import { HeartComponent } from "./heartComponent";
+import { HeartComponent } from "./HeartComponent";
 import "../styles/ProductsComponentStyle.css";
 
 export const ProductsComponent = ({ books }) => {
