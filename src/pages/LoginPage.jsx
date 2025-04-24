@@ -4,8 +4,8 @@ import { useNavigate, Link } from "react-router-dom"; // useNavigate para rediri
 import "../styles/LoginPage.css";
 
 const LoginPage = () => {
-  const [username, setUsername] = useState(""); // Estado para el nombre de usuario
-  const [password, setPassword] = useState(""); // Estado para la contraseña
+  const [username, setUsername] = useState("bibliovida"); // Estado para el nombre de usuario
+  const [password, setPassword] = useState("libros123"); // Estado para la contraseña
   const { login } = useContext(AuthContext); // Accedemos a la función login del contexto
   const navigate = useNavigate(); 
   const [showEmailModal, setShowEmailModal] = useState(false); // Modal contraseña
@@ -58,13 +58,13 @@ const LoginPage = () => {
       <form className="login-form" onSubmit={handleSubmit}>
         <input className="login-input"
           type="text"
-          placeholder="Nombre de usuario"
+          placeholder="bibliovida"
           value={username}
           onChange={(e) => setUsername(e.target.value)} // Actualiza el estado con el input del usuario
         />
         <input className="login-input"
           type="password"
-          placeholder="Contraseña"
+          placeholder="libros123"
           value={password}
           onChange={(e) => setPassword(e.target.value)} // Actualiza el estado con el input de la contraseña
         />
