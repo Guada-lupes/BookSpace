@@ -47,7 +47,7 @@ const HeaderComponent = () => {
         pointerEvents: isLoginPageOrRegisterPage ? "none" : "auto" /* El puntero del ratón no actúa en la página de login ("/") ni en la de registro ("/register")*/
       }}>
       <div className="header__logo-img">
-        <img src="../public/logo.png" alt="Logo" />
+        <img src="./logo.png" alt="Logo" />
       </div>
       </a>
       <div className="header__title" style={{ fontFamily: "Roboto" }}>
