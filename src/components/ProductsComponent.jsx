@@ -14,6 +14,7 @@ export const ProductsComponent = ({ books }) => {
   return (
     // PEPE
     <div className="library-list">
+      {books.length<1 && <div>No hay resultados para tu búsqueda</div>}
       {books.map((book) => (
         <div key={book.id} className="library-item">
           <div className="book-img-container">
