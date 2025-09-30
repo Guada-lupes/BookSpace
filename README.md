@@ -58,8 +58,6 @@ Este proyecto es una plataforma para la gestión de libros y usuarios, construid
 - **Nombre de usuario**: `bibliovida`  
 - **Contraseña**: `libros123`
 
-> **Nota de Seguridad**: 🔒 *Cambia estas credenciales por defecto antes de desplegar en entornos de producción.*
-
 ### Características Adicionales
 - **Diseño Responsivo**: Compatible con múltiples dispositivos.
 - **Paginación**: Navega por los resultados sin inconvenientes.
