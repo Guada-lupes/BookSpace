@@ -1,151 +1,213 @@
-# Book Management App
+Aplicación de Gestión de Libros
+Tabla de Contenidos
 
-## Table of Contents
-- [Book Management App](#book-management-app)
-  - [Table of Contents](#table-of-contents)
-  - [Introduction](#introduction)
-  - [Features](#features)
-    - [User Authentication](#user-authentication)
-    - [Book Management](#book-management)
-    - [Favorites](#favorites)
-    - [Admin Dashboard](#admin-dashboard)
-  - [Default Users (for testing purposes)](#default-users-for-testing-purposes)
-    - [Admin User](#admin-user)
-    - [Regular User](#regular-user)
-    - [Additional Features](#additional-features)
-  - [Technologies Used](#technologies-used)
-    - [Frontend](#frontend)
-    - [Tools](#tools)
-  - [Getting Started](#getting-started)
-  - [Usage](#usage)
-    - [Key Functionalities:](#key-functionalities)
-      - [Regular Users:](#regular-users)
-      - [Admins:](#admins)
-  - [Contributing](#contributing)
-  - [License](#license)
-  - [Authors](#authors)
-  - [More information:](#more-information)
-    - [Project Directory Structure:](#project-directory-structure)
+Aplicación de Gestión de Libros
 
-## Introduction
-This project is a book and user management platform built with Vite and React. It allows users to explore books, manage favorites, handle administrative tasks (for admins), and perform CRUD operations for both books and user profiles. The app uses React Context for global state management and services due to the application interacting with an array of mock data objects.
+Tabla de Contenidos
 
-## Features
+Introducción
 
-### User Authentication
-- Login and registration with roles (admin/user).
+Características
 
-### Book Management
-- Browse available books.
-- Add, edit, or delete books (admin-only).
-- Search books by title and literary genres.
-- Catalog with 60 mocked books.  
+Autenticación de Usuarios
 
-### Favorites
-- Save books to a favorites list.
+Gestión de Libros
 
-### Admin Dashboard
-- Manage users (activate/deactivate, edit roles).
-- Oversee all books on the platform.
+Favoritos
 
-## Default Users (for testing purposes)
+Panel de Administración
 
-### Admin User
-- **Username**: `admin`  
-- **Password**: `admin`
+Usuarios por Defecto (para pruebas)
 
-### Regular User
-- **Username**: `bibliovida`  
-- **Password**: `libros123`
+Usuario Administrador
 
-> **Security Note**: 🔒 *Change these default credentials before deploying to production environments.*
+Usuario Regular
 
+Características Adicionales
 
-### Additional Features
-- **Responsive Design**: Compatible with multiple devices.
-- **Pagination**: Navigate through results seamlessly.
-- **Data persistence** in `localStorage`.  
+Tecnologías Utilizadas
 
-## Technologies Used
+Frontend
 
-### Frontend
-- React 
-- Vite
-- JavaScript (JSX)
-- CSS (Component-scoped styles)
-- React Router (Navigation)
-- Context API (State management)
-- Node.js
-- HTML
+Herramientas
 
-### Tools
-- ESLint (Linting)
-- Git (Version control)
+Primeros Pasos
 
-## Getting Started
+Uso
 
-Clone the repository:
-```sh
+Funcionalidades Clave:
+
+Usuarios Regulares:
+
+Administradores:
+
+Contribuciones
+
+Licencia
+
+Autores
+
+Más información:
+
+Estructura del Directorio del Proyecto:
+
+Introducción
+
+Este proyecto es una plataforma para la gestión de libros y usuarios, construida con Vite y React. Permite a los usuarios explorar libros, gestionar favoritos, realizar tareas administrativas (para administradores) y llevar a cabo operaciones CRUD tanto para libros como para perfiles de usuario. La aplicación usa React Context para la gestión global del estado y servicios debido a que interactúa con un conjunto de datos simulados.
+
+Características
+Autenticación de Usuarios
+
+Inicio de sesión y registro con roles (administrador/usuario).
+
+Gestión de Libros
+
+Navegar libros disponibles.
+
+Añadir, editar o eliminar libros (solo administradores).
+
+Buscar libros por título y géneros literarios.
+
+Catálogo con 60 libros simulados.
+
+Favoritos
+
+Guardar libros en una lista de favoritos.
+
+Panel de Administración
+
+Gestionar usuarios (activar/desactivar, editar roles).
+
+Supervisar todos los libros en la plataforma.
+
+Usuarios por Defecto (para pruebas)
+Usuario Administrador
+
+Nombre de usuario: admin
+
+Contraseña: admin
+
+Usuario Regular
+
+Nombre de usuario: bibliovida
+
+Contraseña: libros123
+
+Nota de Seguridad: 🔒 Cambia estas credenciales por defecto antes de desplegar en entornos de producción.
+
+Características Adicionales
+
+Diseño Responsivo: Compatible con múltiples dispositivos.
+
+Paginación: Navega por los resultados sin inconvenientes.
+
+Persistencia de datos en localStorage.
+
+Tecnologías Utilizadas
+Frontend
+
+React
+
+Vite
+
+JavaScript (JSX)
+
+CSS (Estilos scoped por componente)
+
+React Router (Navegación)
+
+Context API (Gestión de estado)
+
+Node.js
+
+HTML
+
+Herramientas
+
+ESLint (Linting)
+
+Git (Control de versiones)
+
+Primeros Pasos
+
+Clona el repositorio:
+
 git clone http://www.github.com/Guada-lupes/Proyecto-Final--Grupo-1
-```
 
-Navigate to the project directory:
-```sh
+
+Entra al directorio del proyecto:
+
 cd Proyecto-Final--Grupo-1
-```
 
-Install dependencies:
-```sh
+
+Instala las dependencias:
+
 npm install
-```
 
-## Usage
+Uso
 
-Start the development server:
-```sh
+Inicia el servidor de desarrollo:
+
 npm run dev
-```
 
-Access the app in your browser: [http://localhost:5173](http://localhost:5173).
 
-### Key Functionalities:
+Accede a la app en tu navegador: http://localhost:5173
+.
 
-#### Regular Users:
-- Log in or register (mocked).
-- Browse books, add favorites, and manage profiles.
+Funcionalidades Clave:
+Usuarios Regulares:
 
-#### Admins:
-- Access the admin dashboard via the menu.
-- Manage books and users (edit, delete, add new).
-- Search: Use the search bar to filter books.
-- Pagination: Navigate through result pages.
+Iniciar sesión o registrarse (simulado).
 
-## Contributing
+Navegar libros, agregar a favoritos y gestionar perfiles.
 
-Contributions are welcome! To contribute:
+Administradores:
 
-1. Fork the repository.
-2. Create a feature branch:
-   ```sh
-   git checkout -b my-new-feature
-   ```
-3. Commit changes with descriptive messages.
-4. Submit a Pull Request explaining your changes.
-   
-## License
-This project is licensed under the **MIT License**.  
-For details, see the [LICENSE]  (https://github.com/Guada-lupes/Proyecto-Final--Grupo-1?tab=MIT-1-ov-file) file.
+Acceder al panel de administración desde el menú.
 
-## Authors
-- Guadalupe Marándola Ávila (https://github.com/Guada-lupes)
-- Sara del Pozo González (https://github.com/Sppgg)
-- Sara Martín Ferrara (https://github.com/SaraM901)
-- Rebeca Mora González (https://github.com/Rebecatech)
+Gestionar libros y usuarios (editar, eliminar, agregar).
 
-## More information:
-### Project Directory Structure:
+Búsqueda: Usa la barra de búsqueda para filtrar libros.
 
-```sh
+Paginación: Navega entre páginas de resultados.
+
+Contribuciones
+
+¡Se aceptan contribuciones! Para contribuir:
+
+Haz un fork del repositorio.
+
+Crea una rama para tu característica:
+
+git checkout -b mi-nueva-caracteristica
+
+
+Haz commits con mensajes descriptivos.
+
+Envía un Pull Request explicando tus cambios.
+
+Licencia
+
+Este proyecto está bajo la Licencia MIT.
+Para más detalles, consulta el archivo LICENSE
+.
+
+Autores
+
+Guadalupe Marándola Ávila (https://github.com/Guada-lupes
+)
+
+Sara del Pozo González (https://github.com/Sppgg
+)
+
+Sara Martín Ferrara (https://github.com/SaraM901
+)
+
+Rebeca Mora González (https://github.com/Rebecatech
+)
+
+Más información:
+Estructura del Directorio del Proyecto:
 book-management-app/
 ├── src/
 │   ├── assets/
@@ -223,6 +285,4 @@ book-management-app/
 ├── vite.config.js
 ├── LICENSE
 └── README.md
-```
 
----
