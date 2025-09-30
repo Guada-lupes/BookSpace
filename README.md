@@ -79,8 +79,4 @@ Este proyecto es una plataforma para la gestión de libros y usuarios, construid
 - ESLint (Linting)
 - Git (Control de versiones)
 
-## Primeros Pasos
-
-Clona el repositorio:
-```sh
-git clone http://www.github.com/Guada-lupes/Proyecto-Final--Grupo-1
+## Autoras - Guadalupe Marándola Ávila (https://github.com/Guada-lupes) - Sara del Pozo González (https://github.com/Sppgg) - Sara Martín Ferrara (https://github.com/SaraM901) - Rebeca Mora González (https://github.com/Rebecatech)
